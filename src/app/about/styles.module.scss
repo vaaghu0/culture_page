@@ -1,0 +1,42 @@
+.section {
+  width: 100dvw;
+  height: 100dvh;
+  background-color: rgb(163, 163, 163);
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+.coinSection {
+  @extend .section;
+  // background: linear-gradient(to bottom right, #11122e, #68bfe0, #68bfe0);
+  height: 200dvh;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background-color: #545454;
+}
+
+.Illustrations {
+  width: 100px;
+  height: 100px;
+}
+.sectionHalf {
+  width: 100dvw;
+  height: 60dvh;
+}
+
+.threePage {
+  height: 40dvh;
+}
+.blocks {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: row;
+  height: 100dvh;
+}
+.block {
+  width: 30dvw;
+  border: 2px solid black;
+  height: 80dvh;
+}

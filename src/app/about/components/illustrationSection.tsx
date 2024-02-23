@@ -1,49 +1,34 @@
-"use client";
-import styles from "./styles.module.scss";
-import ThreePage from "./assets/threePage";
-import { IllustrationSection } from "./components/illustrationSection";
 import { useEffect, useRef } from "react";
-
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
+import styles from "../styles.module.scss";
+import { tree } from "next/dist/build/templates/app-page";
 gsap.registerPlugin(ScrollTrigger);
 
-const Page = () => {
-  const mainRef = useRef(null);
-  const illustrationSectionRef = useRef(null);
-  const block1 = useRef(null);
-  const block2 = useRef(null);
-  const block3 = useRef(null);
-  const block4 = useRef(null);
+export const IllustrationSection = () => {
+  const trigger = useRef(null);
+  const sessionContainer = useRef(null);
+  const blocks = useRef(null);
   useEffect(() => {
-    const ctx = gsap.context(() => {
-      const t1 = gsap.timeline({
-        scrollTrigger: {
-          trigger: "#section",
-          pin: "#section",
-          markers: true,
-          scrub: true,
-          start: "top top",
-          // end: "bottom center",
-        },
-      });
-      t1.to("#block1", {
-        rotateX: 360,
-        x: 300,
-      }).to("#block2", {
-        rotateY: 2000,
-      });
+    const blocksArray = gsap.utils.toArray(blocks);
+    const result = gsap.to(blocks.current, {
+      duration: 2,
+      xPercent: -100 * blocksArray.length,
+      scrollTrigger: {
+        pin: true,
+        trigger: trigger.current,
+        scrub: true,
+        end: "+=3000",
+      },
     });
-    return () => ctx.revert();
-  }, []);
+    return () => {
+      result.kill();
+    };
+  });
   return (
-    <div ref={mainRef} id="main">
-      <section className={styles.section}></section>
-      <section
-        className={styles.coinSection}
-        ref={illustrationSectionRef}
-        id="section">
-        <div className={styles.block} ref={block1} id="block1">
+    <>
+      <div ref={trigger} className={styles.blocks}>
+        <div className={styles.block} ref={blocks}>
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore
           deleniti reprehenderit ratione minus cupiditate, praesentium beatae
           numquam. Veritatis fugit tempore ab, autem sapiente hic. Explicabo
@@ -51,7 +36,7 @@ const Page = () => {
           Sint tempora aperiam maiores quas vel architecto laudantium quos neque
           cumque odio, ducimus qui quia.
         </div>
-        <div className={styles.block} ref={block2} id="block2">
+        <div className={styles.block} ref={blocks}>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia,
           maiores dolore, saepe fugiat enim quis non dicta deserunt blanditiis
           necessitatibus aut harum beatae eius velit natus? Delectus fugit
@@ -59,7 +44,7 @@ const Page = () => {
           veniam nisi accusantium dolor animi autem facilis ad esse,
           necessitatibus magni laboriosam earum?
         </div>
-        <div className={styles.block} ref={block3} id="block3">
+        <div className={styles.block} ref={blocks}>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam omnis
           sint perspiciatis veniam culpa consectetur saepe? Quaerat dolorem
           perspiciatis reprehenderit dolores dicta minima. Blanditiis aliquid
@@ -67,7 +52,7 @@ const Page = () => {
           explicabo ea voluptates dicta corporis dolorem quidem at nam tenetur
           fuga consequuntur expedita aut magni odit.
         </div>
-        <div className={styles.block} ref={block4}>
+        <div className={styles.block} ref={blocks}>
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis beatae
           deserunt sit quo voluptate fugit dolorum aspernatur numquam eum
           voluptatibus repellat iure modi in ratione tenetur natus, ipsa magni
@@ -75,15 +60,7 @@ const Page = () => {
           doloremque tempore, obcaecati quidem illum consequatur harum doloribus
           iure laudantium, dolores porro?
         </div>
-      </section>
-      <section className={styles.coinSection}>
-        {/* <IllustrationSection></IllustrationSection> */}
-      </section>
-      <section className={styles.coinSection}>
-        <div className={styles.sectionHalf}></div>
-        <ThreePage></ThreePage>
-      </section>
-    </div>
+      </div>
+    </>
   );
 };
-export default Page;
