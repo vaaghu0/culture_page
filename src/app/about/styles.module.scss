@@ -31,8 +31,8 @@
 }
 .sectionHalfIllustration {
   @extend .sectionHalf;
-  width: 40dvw;
-  height: 40dvh;
+  width: 350px;
+  height: 350px;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -43,6 +43,8 @@
 .sectionHalfText {
   @extend .sectionHalf;
   flex-direction: row;
+  overflow: hidden;
+  height: 350px;
 }
 .threePage {
   height: 40dvh;
@@ -60,6 +62,8 @@
 }
 .block {
   // background-color: pink;
+  height: 350px;
   width: 30dvw;
-  position: absolute;
+  position: relative;
+  // margin-bottom: 25px;
 }
