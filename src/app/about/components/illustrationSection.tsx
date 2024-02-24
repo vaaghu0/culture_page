@@ -49,7 +49,7 @@ export const IllustrationSection = () => {
           ease: "expo",
         },
         // end: () => "+=" + sectionRef.current.offsetWidth,
-        markers: true,
+        // markers: true,
       },
     });
   };
@@ -71,7 +71,7 @@ export const IllustrationSection = () => {
           ease: "expo",
         },
         // end: () => "+=" + sectionRef.current.offsetWidth,
-        markers: true,
+        // markers: true,
       },
     });
   };
@@ -175,3 +175,4 @@ export const IllustrationSection = () => {
     </section>
   );
 };
+export default IllustrationSection;

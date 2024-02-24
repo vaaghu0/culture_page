@@ -1,12 +1,13 @@
 "use client";
 import styles from "./styles.module.scss";
 import ThreePage from "./assets/threePage";
-import { IllustrationSection } from "./components/illustrationSection";
 import IllustrationBlock1 from "./assets/IllustrationBlock1";
 import { useEffect, useRef } from "react";
 
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import IllustrationSection from "./components/illustrationSection";
+import FoundersSection from "./components/foundersSection";
 gsap.registerPlugin(ScrollTrigger);
 
 const Page = () => {
@@ -14,9 +15,7 @@ const Page = () => {
     <div id="main">
       <section className={styles.section}></section>
       <IllustrationSection />
-      <section className={styles.section}>
-        {/* <IllustrationSection></IllustrationSection> */}
-      </section>
+      <FoundersSection />
       <section className={styles.coinSection}>
         <div className={styles.sectionHalf}></div>
         <ThreePage></ThreePage>

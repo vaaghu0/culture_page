@@ -102,7 +102,7 @@ export const SVG = (Props: Props): React.ReactNode => {
         <path
           d="M776.455 431.235C776.455 427.269 647.441 424.002 488.231 424.002C329.022 424.002 200.008 427.269 200.008 431.235C200.008 435.202 329.022 438.469 488.231 438.469C647.441 438.469 776.455 435.202 776.455 431.235Z"
           fill="url(#paint9_linear_5458_1032)"
-          fill-opacity="0.6"
+          fillOpacity="0.6"
         />
         <path
           d="M177.823 516.516C177.662 516.678 177.501 516.678 177.34 516.839C176.695 516.516 175.888 516.194 175.082 515.71C175.082 514.581 175.082 513.452 175.405 512.484C176.372 513.936 177.34 515.549 177.823 516.516Z"
@@ -183,68 +183,68 @@ export const SVG = (Props: Props): React.ReactNode => {
           fill="#FFBCA7"
         />
         <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
+          fillRule="evenodd"
+          clipRule="evenodd"
           d="M307.21 232.139C314.539 227.351 316.923 217.642 312.483 209.99C307.881 202.057 297.688 199.339 289.716 203.919C286.159 205.963 283.646 209.115 282.361 212.683C282.631 212.508 282.906 212.338 283.189 212.176C291.16 207.596 301.353 210.314 305.955 218.247C308.504 222.64 308.804 227.711 307.21 232.139Z"
           fill="black"
         />
         <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
+          fillRule="evenodd"
+          clipRule="evenodd"
           d="M311.809 232.15C319.142 227.363 321.528 217.651 317.088 209.997C312.486 202.064 302.293 199.346 294.321 203.926C290.766 205.968 288.253 209.117 286.968 212.683C287.236 212.509 287.51 212.341 287.79 212.18C295.761 207.6 305.954 210.318 310.557 218.251C313.106 222.646 313.405 227.72 311.809 232.15Z"
           fill="black"
         />
         <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
+          fillRule="evenodd"
+          clipRule="evenodd"
           d="M299.924 236.749C307.256 231.962 309.641 222.251 305.201 214.598C300.599 206.665 290.406 203.947 282.434 208.527C278.878 210.57 276.364 213.721 275.08 217.29C275.348 217.115 275.622 216.946 275.903 216.785C283.874 212.205 294.067 214.923 298.67 222.856C301.219 227.249 301.518 232.32 299.924 236.749Z"
           fill="black"
         />
         <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
+          fillRule="evenodd"
+          clipRule="evenodd"
           d="M295.767 234.728C301.606 228.215 301.386 218.219 295.106 211.969C288.597 205.492 278.045 205.492 271.536 211.969C268.633 214.858 267.025 218.547 266.711 222.322C266.924 222.085 267.144 221.853 267.373 221.626C273.882 215.148 284.434 215.148 290.943 221.626C294.549 225.214 296.157 230.038 295.767 234.728Z"
           fill="black"
         />
         <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
+          fillRule="evenodd"
+          clipRule="evenodd"
           d="M299.038 249.372C311.425 248.664 321.25 238.443 321.25 225.939C321.25 212.976 310.69 202.467 297.664 202.467C291.851 202.467 286.529 204.559 282.418 208.029C282.873 208.003 283.331 207.989 283.792 207.989C296.819 207.989 307.379 218.498 307.379 231.462C307.379 238.64 304.141 245.066 299.038 249.372Z"
           fill="black"
         />
         <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
+          fillRule="evenodd"
+          clipRule="evenodd"
           d="M322.941 239.449C328.52 228.42 324.538 214.841 313.656 208.588C302.375 202.107 287.949 205.953 281.436 217.18C278.529 222.19 277.69 227.823 278.653 233.101C278.858 232.697 279.075 232.296 279.306 231.899C285.819 220.672 300.244 216.826 311.526 223.307C317.773 226.896 321.745 232.9 322.941 239.449Z"
           fill="black"
         />
         <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
+          fillRule="evenodd"
+          clipRule="evenodd"
           d="M321.64 212.294C314.833 201.967 301.021 198.606 290.136 204.86C278.855 211.341 274.99 225.696 281.503 236.923C284.409 241.932 288.89 245.472 293.964 247.28C293.716 246.904 293.477 246.519 293.248 246.124C286.735 234.897 290.6 220.542 301.881 214.06C308.129 210.471 315.342 210.049 321.64 212.294Z"
           fill="black"
         />
         <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
+          fillRule="evenodd"
+          clipRule="evenodd"
           d="M291.254 247.702C299.164 249.337 307.075 244.558 309.193 236.694C311.387 228.543 306.527 220.165 298.336 217.981C294.683 217.007 290.985 217.43 287.813 218.92C288.102 218.98 288.39 219.048 288.678 219.125C296.869 221.309 301.729 229.687 299.535 237.838C298.319 242.353 295.193 245.851 291.254 247.702Z"
           fill="black"
         />
         <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
+          fillRule="evenodd"
+          clipRule="evenodd"
           d="M288.632 252.938C296.54 254.57 304.448 249.791 306.565 241.929C308.76 233.778 303.899 225.4 295.709 223.216C292.055 222.242 288.356 222.665 285.184 224.156C285.474 224.216 285.764 224.284 286.054 224.362C294.245 226.546 299.105 234.923 296.911 243.074C295.695 247.589 292.57 251.087 288.632 252.938Z"
           fill="black"
         />
         <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
+          fillRule="evenodd"
+          clipRule="evenodd"
           d="M296.115 243.975C287.793 239.807 277.547 242.782 272.83 250.914C267.939 259.344 270.841 270.123 279.312 274.99C283.091 277.161 287.338 277.789 291.319 277.071C291.014 276.918 290.711 276.755 290.411 276.583C281.94 271.716 279.038 260.937 283.928 252.507C286.638 247.836 291.171 244.867 296.115 243.975Z"
           fill="black"
         />
         <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
+          fillRule="evenodd"
+          clipRule="evenodd"
           d="M257.26 256.668C253.127 250.78 250.703 243.615 250.703 235.888C250.703 215.819 267.051 199.55 287.218 199.55C299.333 199.55 310.069 205.421 316.712 214.46C310.263 238.839 287.96 256.818 261.437 256.818C260.032 256.818 258.639 256.768 257.26 256.668Z"
           fill="black"
         />
@@ -256,8 +256,8 @@ export const SVG = (Props: Props): React.ReactNode => {
           fill="black"
         />
         <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
+          fillRule="evenodd"
+          clipRule="evenodd"
           d="M248.766 226.942C253.281 229.592 261.2 227.179 267.442 220.968C273.679 214.762 276.104 206.888 273.451 202.393C273.925 202.671 274.362 203.005 274.755 203.396C278.893 207.514 276.656 216.416 269.76 223.279C262.863 230.142 253.918 232.368 249.78 228.25C249.384 227.856 249.046 227.418 248.766 226.942Z"
           fill="#FFE27C"
         />
@@ -266,17 +266,17 @@ export const SVG = (Props: Props): React.ReactNode => {
           fill="black"
         />
         <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
+          fillRule="evenodd"
+          clipRule="evenodd"
           d="M360.948 310.458L322.322 295.012L317.897 298.533C306.611 307.513 291.564 310.205 277.879 305.692L263.56 300.971L229.015 313.981C227.604 314.513 226.791 315.992 227.1 317.466L231.988 340.78L239.459 395.789L248.261 504.525L289.934 501.076H350.749L366.086 367.113L425.994 288.929C426.531 288.229 426.876 287.451 427.044 286.652C427.3 286.37 427.476 286.005 427.52 285.584L437.154 195.062C437.402 192.73 435.496 190.731 433.161 190.872L416.6 191.875C414.844 191.982 413.396 193.29 413.11 195.03L400.196 273.516L360.948 310.458Z"
           fill="url(#paint12_linear_5458_1032)"
         />
         <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
+          fillRule="evenodd"
+          clipRule="evenodd"
           d="M360.948 310.458L322.322 295.012L317.897 298.533C306.611 307.513 291.564 310.205 277.879 305.692L263.56 300.971L229.015 313.981C227.604 314.513 226.791 315.992 227.1 317.466L231.988 340.78L239.459 395.789L248.261 504.525L289.934 501.076H350.749L366.086 367.113L425.994 288.929C426.531 288.229 426.876 287.451 427.044 286.652C427.3 286.37 427.476 286.005 427.52 285.584L437.154 195.062C437.402 192.73 435.496 190.731 433.161 190.872L416.6 191.875C414.844 191.982 413.396 193.29 413.11 195.03L400.196 273.516L360.948 310.458Z"
           fill="#0A0A0A"
-          fill-opacity="0.36"
+          fillOpacity="0.36"
         />
         <rect
           x="312.312"
@@ -286,8 +286,8 @@ export const SVG = (Props: Props): React.ReactNode => {
           fill="url(#pattern0)"
         />
         <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
+          fillRule="evenodd"
+          clipRule="evenodd"
           d="M339.225 302.366L353.691 307.764L348.491 352.4L360.005 352.4C370.05 375.632 369.479 402.085 358.442 424.856L357.715 426.356L359.996 474.882L390.032 622.676H389.309L403.168 823.688L372.223 823.708L360.234 749.55L336.853 622.676H336.548L330.216 586.13C327.174 568.572 322.174 551.43 315.321 535.022L308.973 632.936H308.343L310.946 820.528L281.032 821.405L272.406 713.875L267.181 632.658H267.952L245.097 545.765C239.001 522.588 238.956 498.251 244.944 475.08H244.621L237.936 413.942L233.186 392.455C230.264 379.239 230.46 365.526 233.758 352.4L244.22 352.4L236.073 310.391L252.348 304.993L263.464 352.4L330.835 352.4L339.225 302.366ZM315.659 475.142V475.08H321.238L315.659 475.142Z"
           fill="#BA3A3D"
         />
@@ -299,8 +299,8 @@ export const SVG = (Props: Props): React.ReactNode => {
           width="177"
           height="521">
           <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
+            fillRule="evenodd"
+            clipRule="evenodd"
             d="M341.529 303.486L355.828 309.563L350.8 352.378H360.229C369.58 375.923 368.773 402.273 357.998 425.168L357.727 425.745L359.854 474.656L362.625 474.626L393.407 622.655H392.664L406.844 823.667L375.182 823.687L362.915 749.529L338.992 622.655H338.683L332.323 586.777C329.171 568.996 324.011 551.65 316.955 535.067L310.465 632.91H309.822L312.485 820.506L281.878 821.383L273.052 713.853L267.706 632.636H268.494L245.118 545.772C238.88 522.595 238.831 498.213 244.951 475.057H244.621L237.781 413.919L232.925 392.451C229.935 379.232 230.134 365.495 233.507 352.378H244.213L235.878 310.37L252.53 304.972L263.903 352.378H333L341.529 303.486ZM317.305 475.121V475.057H323.141L317.305 475.121Z"
             fill="#BA3A3D"
           />
@@ -309,12 +309,12 @@ export const SVG = (Props: Props): React.ReactNode => {
           <path
             d="M479.492 193.092H317.395L352.647 503.167C354.655 520.834 354.75 538.667 352.93 556.356L317.395 901.605H479.492V193.092Z"
             fill="#722123"
-            fill-opacity="0.29"
+            fillOpacity="0.29"
           />
           <path
             d="M108.98 760.849L269.663 781.73L276.536 469.788C276.927 452.036 279.236 434.368 283.421 417.089L365.212 79.3982L204.529 58.5172L108.98 760.849Z"
             fill="#722123"
-            fill-opacity="0.29"
+            fillOpacity="0.29"
           />
         </g>
         <ellipse
@@ -542,44 +542,44 @@ export const SVG = (Props: Props): React.ReactNode => {
         <path
           d="M288.382 39.4666L294.002 22.9831"
           stroke="url(#paint15_linear_5458_1032)"
-          stroke-width="4"
-          stroke-linecap="round"
+          strokeWidth="4"
+          strokeLinecap="round"
         />
         <path
           d="M246.419 56.1244L230.896 48.6165"
           stroke="url(#paint16_linear_5458_1032)"
-          stroke-width="4"
-          stroke-linecap="round"
+          strokeWidth="4"
+          strokeLinecap="round"
         />
         <path
           d="M264.522 40.7338L258.024 24.5763"
           stroke="url(#paint17_linear_5458_1032)"
-          stroke-width="4"
-          stroke-linecap="round"
+          strokeWidth="4"
+          strokeLinecap="round"
         />
         <path
           d="M309.392 48.39L320.93 35.345"
           stroke="url(#paint18_linear_5458_1032)"
-          stroke-width="4"
-          stroke-linecap="round"
+          strokeWidth="4"
+          strokeLinecap="round"
         />
         <path
           d="M240.702 80.059L223.264 78.9463"
           stroke="url(#paint19_linear_5458_1032)"
-          stroke-width="4"
-          stroke-linecap="round"
+          strokeWidth="4"
+          strokeLinecap="round"
         />
         <path
           d="M320.906 63.9025L336.682 56.525"
           stroke="url(#paint20_linear_5458_1032)"
-          stroke-width="4"
-          stroke-linecap="round"
+          strokeWidth="4"
+          strokeLinecap="round"
         />
         <path
           d="M242.279 103.09L225.839 109.007"
           stroke="url(#paint21_linear_5458_1032)"
-          stroke-width="4"
-          stroke-linecap="round"
+          strokeWidth="4"
+          strokeLinecap="round"
         />
         <rect
           x="574.207"
@@ -618,8 +618,8 @@ export const SVG = (Props: Props): React.ReactNode => {
           x2="282"
           y2="386.931"
           gradientUnits="userSpaceOnUse">
-          <stop stop-color="#BCF4FF" />
-          <stop offset="1" stop-color="#E5ECC9" />
+          <stop stopColor="#BCF4FF" />
+          <stop offset="1" stopColor="#E5ECC9" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_5458_1032"
@@ -628,8 +628,8 @@ export const SVG = (Props: Props): React.ReactNode => {
           x2="226.744"
           y2="380.629"
           gradientUnits="userSpaceOnUse">
-          <stop stop-color="#42AA88" />
-          <stop offset="1" stop-color="#388D79" />
+          <stop stopColor="#42AA88" />
+          <stop offset="1" stopColor="#388D79" />
         </linearGradient>
         <linearGradient
           id="paint2_linear_5458_1032"
@@ -638,8 +638,8 @@ export const SVG = (Props: Props): React.ReactNode => {
           x2="268.708"
           y2="394.928"
           gradientUnits="userSpaceOnUse">
-          <stop stop-color="#44B18B" />
-          <stop offset="1" stop-color="#2F746C" />
+          <stop stopColor="#44B18B" />
+          <stop offset="1" stopColor="#2F746C" />
         </linearGradient>
         <linearGradient
           id="paint3_linear_5458_1032"
@@ -648,8 +648,8 @@ export const SVG = (Props: Props): React.ReactNode => {
           x2="-1068.88"
           y2="581.296"
           gradientUnits="userSpaceOnUse">
-          <stop stop-color="#59CEA4" />
-          <stop offset="1" stop-color="#4CB694" />
+          <stop stopColor="#59CEA4" />
+          <stop offset="1" stopColor="#4CB694" />
         </linearGradient>
         <linearGradient
           id="paint4_linear_5458_1032"
@@ -658,9 +658,9 @@ export const SVG = (Props: Props): React.ReactNode => {
           x2="1511.48"
           y2="379.488"
           gradientUnits="userSpaceOnUse">
-          <stop stop-color="#6DD7B0" />
-          <stop offset="0.563628" stop-color="#6DD9B2" />
-          <stop offset="1" stop-color="#6DD9B2" />
+          <stop stopColor="#6DD7B0" />
+          <stop offset="0.563628" stopColor="#6DD9B2" />
+          <stop offset="1" stopColor="#6DD9B2" />
         </linearGradient>
         <linearGradient
           id="paint5_linear_5458_1032"
@@ -669,9 +669,9 @@ export const SVG = (Props: Props): React.ReactNode => {
           x2="1799.15"
           y2="377.263"
           gradientUnits="userSpaceOnUse">
-          <stop stop-color="#6DD7B0" />
-          <stop offset="0.646291" stop-color="#6DD8B1" />
-          <stop offset="1" stop-color="#6DD8B1" />
+          <stop stopColor="#6DD7B0" />
+          <stop offset="0.646291" stopColor="#6DD8B1" />
+          <stop offset="1" stopColor="#6DD8B1" />
         </linearGradient>
         <linearGradient
           id="paint6_linear_5458_1032"
@@ -680,8 +680,8 @@ export const SVG = (Props: Props): React.ReactNode => {
           x2="-131.946"
           y2="381.359"
           gradientUnits="userSpaceOnUse">
-          <stop stop-color="#42AB88" />
-          <stop offset="1" stop-color="#54DCA9" />
+          <stop stopColor="#42AB88" />
+          <stop offset="1" stopColor="#54DCA9" />
         </linearGradient>
         <linearGradient
           id="paint7_linear_5458_1032"
@@ -690,8 +690,8 @@ export const SVG = (Props: Props): React.ReactNode => {
           x2="1602.73"
           y2="378.374"
           gradientUnits="userSpaceOnUse">
-          <stop stop-color="#4DB391" />
-          <stop offset="1" stop-color="#4DB391" stop-opacity="0" />
+          <stop stopColor="#4DB391" />
+          <stop offset="1" stopColor="#4DB391" stopOpacity="0" />
         </linearGradient>
         <linearGradient
           id="paint8_linear_5458_1032"
@@ -700,8 +700,8 @@ export const SVG = (Props: Props): React.ReactNode => {
           x2="697.367"
           y2="451.508"
           gradientUnits="userSpaceOnUse">
-          <stop stop-color="#378D79" />
-          <stop offset="1" stop-color="#59CEA4" />
+          <stop stopColor="#378D79" />
+          <stop offset="1" stopColor="#59CEA4" />
         </linearGradient>
         <linearGradient
           id="paint9_linear_5458_1032"
@@ -710,8 +710,8 @@ export const SVG = (Props: Props): React.ReactNode => {
           x2="-154.63"
           y2="431.875"
           gradientUnits="userSpaceOnUse">
-          <stop stop-color="#43AE8A" />
-          <stop offset="1" stop-color="#39917B" stop-opacity="0.58" />
+          <stop stopColor="#43AE8A" />
+          <stop offset="1" stopColor="#39917B" stopOpacity="0.58" />
         </linearGradient>
         <linearGradient
           id="paint10_linear_5458_1032"
@@ -720,7 +720,7 @@ export const SVG = (Props: Props): React.ReactNode => {
           x2="-226.5"
           y2="377.581"
           gradientUnits="userSpaceOnUse">
-          <stop stop-color="#6DD7B0" />
+          <stop stopColor="#6DD7B0" />
         </linearGradient>
         <linearGradient
           id="paint11_linear_5458_1032"
@@ -729,7 +729,7 @@ export const SVG = (Props: Props): React.ReactNode => {
           x2="123.5"
           y2="374.581"
           gradientUnits="userSpaceOnUse">
-          <stop stop-color="#6DD7B0" />
+          <stop stopColor="#6DD7B0" />
         </linearGradient>
         <linearGradient
           id="paint12_linear_5458_1032"
@@ -738,8 +738,8 @@ export const SVG = (Props: Props): React.ReactNode => {
           x2="505.256"
           y2="415.092"
           gradientUnits="userSpaceOnUse">
-          <stop stop-color="#353C73" />
-          <stop offset="1" stop-color="#AE3033" />
+          <stop stopColor="#353C73" />
+          <stop offset="1" stopColor="#AE3033" />
         </linearGradient>
         <linearGradient
           id="paint13_linear_5458_1032"
@@ -748,8 +748,8 @@ export const SVG = (Props: Props): React.ReactNode => {
           x2="312.965"
           y2="144.372"
           gradientUnits="userSpaceOnUse">
-          <stop offset="0.229167" stop-color="#FFE27C" />
-          <stop offset="1" stop-color="#FF9D43" />
+          <stop offset="0.229167" stopColor="#FFE27C" />
+          <stop offset="1" stopColor="#FF9D43" />
         </linearGradient>
         <linearGradient
           id="paint14_linear_5458_1032"
@@ -758,8 +758,8 @@ export const SVG = (Props: Props): React.ReactNode => {
           x2="270.022"
           y2="105.943"
           gradientUnits="userSpaceOnUse">
-          <stop stop-color="white" />
-          <stop offset="0.942708" stop-color="white" stop-opacity="0" />
+          <stop stopColor="white" />
+          <stop offset="0.942708" stopColor="white" stopOpacity="0" />
         </linearGradient>
         <linearGradient
           id="paint15_linear_5458_1032"
@@ -768,8 +768,8 @@ export const SVG = (Props: Props): React.ReactNode => {
           x2="287.903"
           y2="39.2503"
           gradientUnits="userSpaceOnUse">
-          <stop stop-color="#FF9D43" />
-          <stop offset="1" stop-color="#FFE27C" />
+          <stop stopColor="#FF9D43" />
+          <stop offset="1" stopColor="#FFE27C" />
         </linearGradient>
         <linearGradient
           id="paint16_linear_5458_1032"
@@ -778,8 +778,8 @@ export const SVG = (Props: Props): React.ReactNode => {
           x2="248.612"
           y2="57.1956"
           gradientUnits="userSpaceOnUse">
-          <stop stop-color="#FF9D43" />
-          <stop offset="1" stop-color="#FFE27C" />
+          <stop stopColor="#FF9D43" />
+          <stop offset="1" stopColor="#FFE27C" />
         </linearGradient>
         <linearGradient
           id="paint17_linear_5458_1032"
@@ -788,8 +788,8 @@ export const SVG = (Props: Props): React.ReactNode => {
           x2="264.071"
           y2="43.9066"
           gradientUnits="userSpaceOnUse">
-          <stop stop-color="#FF9D43" />
-          <stop offset="1" stop-color="#FFE27C" />
+          <stop stopColor="#FF9D43" />
+          <stop offset="1" stopColor="#FFE27C" />
         </linearGradient>
         <linearGradient
           id="paint18_linear_5458_1032"
@@ -798,8 +798,8 @@ export const SVG = (Props: Props): React.ReactNode => {
           x2="308.231"
           y2="49.8207"
           gradientUnits="userSpaceOnUse">
-          <stop stop-color="#FF9D43" />
-          <stop offset="1" stop-color="#FFE27C" />
+          <stop stopColor="#FF9D43" />
+          <stop offset="1" stopColor="#FFE27C" />
         </linearGradient>
         <linearGradient
           id="paint19_linear_5458_1032"
@@ -808,8 +808,8 @@ export const SVG = (Props: Props): React.ReactNode => {
           x2="224.77"
           y2="80.202"
           gradientUnits="userSpaceOnUse">
-          <stop stop-color="#FFE27C" />
-          <stop offset="1" stop-color="#FF9D43" />
+          <stop stopColor="#FFE27C" />
+          <stop offset="1" stopColor="#FF9D43" />
         </linearGradient>
         <linearGradient
           id="paint20_linear_5458_1032"
@@ -818,8 +818,8 @@ export const SVG = (Props: Props): React.ReactNode => {
           x2="320.938"
           y2="63.2276"
           gradientUnits="userSpaceOnUse">
-          <stop stop-color="#FF9D43" />
-          <stop offset="1" stop-color="#FFE27C" />
+          <stop stopColor="#FF9D43" />
+          <stop offset="1" stopColor="#FFE27C" />
         </linearGradient>
         <linearGradient
           id="paint21_linear_5458_1032"
@@ -828,8 +828,8 @@ export const SVG = (Props: Props): React.ReactNode => {
           x2="244.016"
           y2="101.322"
           gradientUnits="userSpaceOnUse">
-          <stop stop-color="#FF9D43" />
-          <stop offset="1" stop-color="#FFE27C" />
+          <stop stopColor="#FF9D43" />
+          <stop offset="1" stopColor="#FFE27C" />
         </linearGradient>
         <image
           id="image0_5458_1032"
