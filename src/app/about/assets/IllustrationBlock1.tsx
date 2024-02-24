@@ -1,8 +1,12 @@
-export const SVG = ({}): React.ReactNode => {
+type Props = {
+  width: string;
+  height: string;
+};
+export const SVG = (Props: Props): React.ReactNode => {
   return (
     <svg
-      width="564"
-      height="528"
+      width={Props.width}
+      height={Props.height}
       viewBox="0 0 564 528"
       fill="none"
       xmlns="http://www.w3.org/2000/svg">

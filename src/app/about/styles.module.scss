@@ -10,10 +10,12 @@
 .coinSection {
   @extend .section;
   // background: linear-gradient(to bottom right, #11122e, #68bfe0, #68bfe0);
-  height: 200dvh;
-  justify-content: flex-start;
-  align-items: flex-start;
+  height: 100lvh;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
   background-color: #545454;
+  // overflow: hidden;
 }
 
 .Illustrations {
@@ -21,10 +23,27 @@
   height: 100px;
 }
 .sectionHalf {
-  width: 100dvw;
-  height: 60dvh;
+  width: fit-content;
+  min-width: 25dvh;
+  height: 40dvh;
+  // border: 5px red solid;
+  overflow: visible;
 }
-
+.sectionHalfIllustration {
+  @extend .sectionHalf;
+  width: 40dvw;
+  height: 40dvh;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: hidden;
+  // border: 5px solid black;
+}
+.sectionHalfText {
+  @extend .sectionHalf;
+  flex-direction: row;
+}
 .threePage {
   height: 40dvh;
 }
@@ -33,10 +52,14 @@
   justify-content: flex-start;
   align-items: flex-start;
   flex-direction: row;
-  height: 100dvh;
+}
+.IllustrationBlock {
+  background: transparent;
+  position: relative;
+  // background-color: rgba(255, 0, 0, 0.367);
 }
 .block {
+  // background-color: pink;
   width: 30dvw;
-  border: 2px solid black;
-  height: 80dvh;
+  position: absolute;
 }
