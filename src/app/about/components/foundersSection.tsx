@@ -7,7 +7,7 @@ gsap.registerPlugin(ScrollTrigger);
 const Block = () => {
   return (
     <>
-      {/* <img /> */}
+      {/* <img /> */}``
       <p>dawdawdawdawdawd</p>
     </>
   );
@@ -19,46 +19,77 @@ export const FoundersSection: React.FC = () => {
   const foundersListTimeline = () => {
     let panels = gsap.utils.toArray(".founders");
     console.log(panels);
-    return gsap.timeline().to(panels, {
-      xPercent: -100 * (panels.length - 1),
-      ease: "none",
-      delay: 10,
-      duration: 10,
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        pin: sectionRef.current,
-        start: "top top",
-        snap: {
-          snapTo: 1 / (panels.length - 1),
-          duration: 0.5,
-          delay: 0,
-          ease: "expo",
+    return gsap
+      .timeline({})
+      .set(".circle", { width: "10px" }, 0)
+      .to(
+        panels,
+        {
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            pin: sectionRef.current,
+            start: "top top",
+            snap: {
+              snapTo: 1 / (panels.length - 1),
+              duration: 0.1,
+              delay: 0,
+              ease: "expo",
+            },
+            scrub: true,
+            // markers: true,
+          },
+          xPercent: -100 * (panels.length - 1),
+          ease: "none",
+          delay: 10,
+          duration: 100,
         },
-        scrub: true,
-        // markers: true,
-      },
-    });
+        ">"
+      );
+    // .to(".circle", {
+    //   width: 40,
+    //   duration: 25,
+    //   repeat: 0,
+    //   scrollTrigger: {
+    //     trigger: sectionRef.current,
+    //     start: "top top",
+    //     scrub: true,
+    //   },
+    // });
   };
   const dotesTimeline = () => {
-    return gsap.timeline().to(".circle", {
-      xPercent: 100 * 9,
-      ease: "none",
-      delay: 10,
-      duration: 10,
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        // pin: sectionRef.current,
-        start: "top top",
-        scrub: true,
-        // markers: true,
+    return gsap.timeline().to(
+      ".circle",
+      {
+        x: 10 * 9,
+        ease: "none",
+        delay: 10,
+        duration: 10,
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top top",
+          scrub: true,
+        },
       },
-    });
+      0
+    );
+  };
+  const dotesSize = () => {
+    return gsap
+      .timeline()
+      .set(".circle", { width: "10px" })
+      .to(".circle", {
+        width: 40,
+      })
+      .to(".circle", {
+        width: "10px",
+      });
   };
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
       let t1 = gsap.timeline();
-      t1.add(foundersListTimeline());
+      foundersListTimeline();
       t1.add(dotesTimeline());
+      t1.add(dotesSize(), "<");
     }, sectionRef);
     return () => ctx.revert();
   });
