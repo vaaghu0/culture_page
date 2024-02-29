@@ -5,17 +5,32 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: flex-end;
+  align-items: flex-start;
 }
-
+.coinDescription {
+  width: 100vw;
+  height: 50vh;
+}
+.coinDiv {
+  width: auto;
+  height: auto;
+  visibility: hidden;
+}
 .sheet {
   height: 50vh;
   width: 50vw;
   max-width: 80vw;
   position: absolute;
-  background-color: aqua;
+  background-color: rgb(65, 65, 65);
   bottom: 0px;
   left: 50%;
+  font-size: 0.8em;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
   padding: 20px;
   margin-bottom: 15px;
   transform: translateX(-50%);

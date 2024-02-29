@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef } from "react";
+import { useLayoutEffect, useRef, MutableRefObject } from "react";
 import Coin from "../assets/coin";
 import styles from "../styles.module.scss";
 import coinStyles from "../styles/coinSection.module.scss";
@@ -6,6 +6,7 @@ import coinStyles from "../styles/coinSection.module.scss";
 //gsap
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
+
 gsap.registerPlugin(ScrollTrigger);
 
 type Prop = {
@@ -14,7 +15,7 @@ type Prop = {
 
 const Sheet = (Prop: Prop) => {
   return (
-    <div className={coinStyles.sheet}>
+    <div className={coinStyles.sheet + " sheet"}>
       <p>{Prop.text}</p>
     </div>
   );
@@ -22,21 +23,28 @@ const Sheet = (Prop: Prop) => {
 
 export const CoinSection = () => {
   const coin = useRef(null);
-  const section = useRef(null);
+  const section: MutableRefObject<any> = useRef(null);
   const coinAnimation = () => {
+    const duration = 10;
     return gsap
-      .timeline({ repeat: -1 })
+      .timeline({
+        scrollTrigger: {
+          trigger: section.current,
+          pin: section.current,
+          scrub: true,
+        },
+      })
       .set(coin.current, {
-        x: -100,
+        xPercent: -100,
+        visibility: "visible",
+        scale: section.current.offsetHeight / 1000,
       })
       .to(
         coin.current,
         {
-          x: "100vw",
-          duration: 2,
-          yoyo: true,
+          x: "120vw",
+          duration: duration * 2,
           ease: "none",
-          repeat: -1,
         },
         "<"
       )
@@ -44,9 +52,7 @@ export const CoinSection = () => {
         coin.current,
         {
           yPercent: -200,
-          duration: 1,
-          yoyo: true,
-          repeat: -1,
+          duration: duration,
           ease: "power1.out",
         },
         "<"
@@ -54,35 +60,80 @@ export const CoinSection = () => {
       .to(
         coin.current,
         {
-          rotationZ: 1000,
-          duration: 1,
-          repeat: -1,
+          yPercent: 0,
+          duration: duration,
+          ease: "power1.in",
+        },
+        ">"
+      );
+  };
+  const coinRotationAimation = () => {
+    return gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: section.current,
+          start: "0vh",
+          // pin: section.current,
+          scrub: true,
+        },
+      })
+      .to(
+        coin.current,
+        {
+          duration: 100,
+          rotationZ: 360,
           ease: "none",
+          repeat: -1,
         },
         "<"
       );
   };
-
+  const sheetMovement = () => {
+    let duration = 2;
+    let t1 = gsap.timeline({
+      scrollTrigger: {
+        trigger: section.current,
+        start: "0vh",
+        // pin: section.current,
+        scrub: true,
+      },
+    });
+    gsap.utils
+      .toArray<HTMLDivElement>(`.sheet`)
+      .reverse()
+      .forEach((element: HTMLDivElement) => {
+        t1.set(element, {
+          y: "0vh",
+        }).to(element, {
+          y: "-100vh",
+          opacity: 0,
+          duration: duration,
+        });
+      });
+    return t1;
+  };
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
       const time = gsap.timeline();
-      time.add(coinAnimation());
+      time.add(coinRotationAimation(), 0);
+      time.add(coinAnimation(), 0);
+      time.add(sheetMovement(), ">15");
     });
     return () => ctx.revert();
   }, []);
   return (
-    <section className={styles.section} ref={section}>
+    <section className={coinStyles.section} ref={section}>
+      <div className={coinStyles.coinDescription}></div>
       <div className={coinStyles.coinDiv}>
         <div ref={coin}>
           <Coin />
         </div>
       </div>
       <div className={coinStyles.sheetDiv}>
-        {/* <Sheet text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, et! Repellat nesciunt quaerat obcaecati dolor iure! Voluptatum nulla vel iure perferendis nemo. Sapiente, id? Dolorem molestiae dignissimos laboriosam nesciunt ipsum repellendus, impedit dolores fuga est necessitatibus dolorum nam vitae placeat, ratione quis quos quaerat laborum pariatur. Accusantium accusamus nesciunt praesentium!" />
-        <Sheet text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, et! Repellat nesciunt quaerat obcaecati dolor iure! Voluptatum nulla vel iure perferendis nemo. Sapiente, id? Dolorem molestiae dignissimos laboriosam nesciunt ipsum repellendus, impedit dolores fuga est necessitatibus dolorum nam vitae placeat, ratione quis quos quaerat laborum pariatur. Accusantium accusamus nesciunt praesentium!" />
-        <Sheet text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, et! Repellat nesciunt quaerat obcaecati dolor iure! Voluptatum nulla vel iure perferendis nemo. Sapiente, id? Dolorem molestiae dignissimos laboriosam nesciunt ipsum repellendus, impedit dolores fuga est necessitatibus dolorum nam vitae placeat, ratione quis quos quaerat laborum pariatur. Accusantium accusamus nesciunt praesentium!" />
-        <Sheet text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, et! Repellat nesciunt quaerat obcaecati dolor iure! Voluptatum nulla vel iure perferendis nemo. Sapiente, id? Dolorem molestiae dignissimos laboriosam nesciunt ipsum repellendus, impedit dolores fuga est necessitatibus dolorum nam vitae placeat, ratione quis quos quaerat laborum pariatur. Accusantium accusamus nesciunt praesentium!" />
-        <Sheet text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, et! Repellat nesciunt quaerat obcaecati dolor iure! Voluptatum nulla vel iure perferendis nemo. Sapiente, id? Dolorem molestiae dignissimos laboriosam nesciunt ipsum repellendus, impedit dolores fuga est necessitatibus dolorum nam vitae placeat, ratione quis quos quaerat laborum pariatur. Accusantium accusamus nesciunt praesentium!" /> */}
+        <Sheet text="1111Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, et! Repellat nesciunt quaerat obcaecati dolor iure! Voluptatum nulla vel iure perferendis nemo. Sapiente, id? Dolorem molestiae dignissimos laboriosam nesciunt ipsum repellendus, impedit dolores fuga est necessitatibus dolorum nam vitae placeat, ratione quis quos quaerat laborum pariatur. Accusantium accusamus nesciunt praesentium!" />
+        <Sheet text="2222Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla reiciendis labore dolor repellat, esse atque voluptatum repellendus autem quisquam iste expedita dolore doloremque optio delectus vel eaque eligendi quam. Temporibus maiores ut quae id molestiae dolore, architecto quia. Maxime illum illo qui itaque dolor reprehenderit unde accusantium molestiae perspiciatis eaque?" />
+        <Sheet text="3333Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla reiciendis labore dolor repellat, esse atque voluptatum repellendus autem quisquam iste expedita dolore doloremque optio delectus vel eaque eligendi quam. Temporibus maiores ut quae id molestiae dolore, architecto quia. Maxime illum illo qui itaque dolor reprehenderit unde accusantium molestiae perspiciatis eaque?" />
+        <Sheet text="4444Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla reiciendis labore dolor repellat, esse atque voluptatum repellendus autem quisquam iste expedita dolore doloremque optio delectus vel eaque eligendi quam. Temporibus maiores ut quae id molestiae dolore, architecto quia. Maxime illum illo qui itaque dolor reprehenderit unde accusantium molestiae perspiciatis eaque?" />
       </div>
     </section>
   );

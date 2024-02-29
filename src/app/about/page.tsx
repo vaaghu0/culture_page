@@ -13,14 +13,11 @@ import CoinSection from "./components/coinSection";
 const Page = () => {
   return (
     <div id="main">
-      {/* <section className={styles.section}></section> */}
+      <section className={styles.section}></section>
       {/* <IllustrationSection />
       <FoundersSection /> */}
       <CoinSection />
-      <section className={styles.coinSection}>
-        <div className={styles.sectionHalf}></div>
-        <ThreePage></ThreePage>
-      </section>
+      <section className={styles.coinSection}></section>
     </div>
   );
 };
