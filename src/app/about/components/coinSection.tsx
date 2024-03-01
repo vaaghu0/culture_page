@@ -23,7 +23,7 @@ export const CoinSection = () => {
   const coin = useRef(null);
   const section: MutableRefObject<any> = useRef(null);
   const coinAnimation = () => {
-    const duration = 10;
+    const duration = 100;
     return gsap
       .timeline({
         scrollTrigger: {
@@ -70,28 +70,28 @@ export const CoinSection = () => {
       .timeline({
         scrollTrigger: {
           trigger: section.current,
-          start: "0vh",
-          // pin: section.current,
+          start: "-1vh",
           scrub: true,
         },
       })
       .to(
         coin.current,
         {
-          duration: 100,
+          duration: 1000000000,
           rotationZ: 360,
           ease: "none",
           repeat: -1,
+          repeatDelay: 1,
         },
         "<"
       );
   };
   const sheetMovement = () => {
-    let duration = 2;
+    let duration = 100000000000000 * 1000;
     let t1 = gsap.timeline({
       scrollTrigger: {
         trigger: section.current,
-        start: "0vh",
+        start: "-1vh",
         // pin: section.current,
         scrub: true,
       },
@@ -105,21 +105,19 @@ export const CoinSection = () => {
           duration: -1,
         }).to(element, {
           y: "-100vh",
-          opacity: 0,
+          delay: 1234,
           duration: duration,
         });
       });
     return t1;
   };
   const TextAnimation = () => {
-    let duration = 10;
+    let duration = 5;
     let t1 = gsap.timeline({
       scrollTrigger: {
         trigger: section.current,
-        // markers: true,
+        start: "-1vh",
         scrub: true,
-        // pin: true,
-        start: "0vw",
       },
     });
     gsap.utils
@@ -133,10 +131,10 @@ export const CoinSection = () => {
   };
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
+      TextAnimation();
       coinRotationAimation();
       coinAnimation();
       sheetMovement();
-      TextAnimation();
     });
     return () => ctx.revert();
   }, []);
@@ -159,6 +157,7 @@ export const CoinSection = () => {
         <Sheet text="2222Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla reiciendis labore dolor repellat, esse atque voluptatum repellendus autem quisquam iste expedita dolore doloremque optio delectus vel eaque eligendi quam. Temporibus maiores ut quae id molestiae dolore, architecto quia. Maxime illum illo qui itaque dolor reprehenderit unde accusantium molestiae perspiciatis eaque?" />
         <Sheet text="3333Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla reiciendis labore dolor repellat, esse atque voluptatum repellendus autem quisquam iste expedita dolore doloremque optio delectus vel eaque eligendi quam. Temporibus maiores ut quae id molestiae dolore, architecto quia. Maxime illum illo qui itaque dolor reprehenderit unde accusantium molestiae perspiciatis eaque?" />
         <Sheet text="4444Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla reiciendis labore dolor repellat, esse atque voluptatum repellendus autem quisquam iste expedita dolore doloremque optio delectus vel eaque eligendi quam. Temporibus maiores ut quae id molestiae dolore, architecto quia. Maxime illum illo qui itaque dolor reprehenderit unde accusantium molestiae perspiciatis eaque?" />
+        <Sheet text="5555Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla reiciendis labore dolor repellat, esse atque voluptatum repellendus autem quisquam iste expedita dolore doloremque optio delectus vel eaque eligendi quam. Temporibus maiores ut quae id molestiae dolore, architecto quia. Maxime illum illo qui itaque dolor reprehenderit unde accusantium molestiae perspiciatis eaque?" />
       </div>
     </section>
   );

@@ -1,10 +1,10 @@
 "use client";
 import styles from "./styles.module.scss";
-import ThreePage from "./assets/threePage";
 
 import IllustrationSection from "./components/illustrationSection";
 import FoundersSection from "./components/foundersSection";
 import CoinSection from "./components/coinSection";
+import TeamsSection from "./components/teamsSection";
 //gsap
 // import { gsap } from "gsap";
 // import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -13,10 +13,11 @@ import CoinSection from "./components/coinSection";
 const Page = () => {
   return (
     <div id="main">
-      <section className={styles.section}></section>
-      {/* <IllustrationSection />
-      <FoundersSection /> */}
-      <CoinSection />
+      {/* <section className={styles.section}></section> */}
+      {/* <IllustrationSection /> */}
+      {/* <FoundersSection /> */}
+      {/* <CoinSection /> */}
+      <TeamsSection />
       <section className={styles.coinSection}></section>
     </div>
   );

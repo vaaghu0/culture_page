@@ -15,7 +15,7 @@
   align-items: flex-start;
 }
 .coinDescription {
-  width: 100vw;
+  width: 50vw;
   height: 50vh;
   display: flex;
   flex-direction: row;
@@ -33,8 +33,8 @@
   visibility: hidden;
 }
 .sheet {
-  height: 50vh;
-  width: 50vw;
+  height: 250px;
+  width: 250px;
   max-width: 80vw;
   position: absolute;
   background-color: rgb(65, 65, 65);
@@ -51,7 +51,7 @@
   margin-bottom: 15px;
 }
 
-@for $i from 1 through 4 {
+@for $i from 1 through 5 {
   .sheet:nth-child(#{$i}) {
     @if $i%2 == 1 {
       background-color: red;

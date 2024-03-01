@@ -1,0 +1,16 @@
+.teams {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  overflow-x: hidden;
+
+  min-height: 300px;
+  div {
+    background-color: red;
+    // position: absolute;
+    min-width: 250px;
+    height: 250px;
+    margin: 0px 10px;
+  }
+}
