@@ -1,3 +1,10 @@
+@function randomNum($max) {
+  $rand: random($max);
+  $randomNum: floor($rand - ceil($max/2));
+
+  @return $randomNum;
+}
+
 .section {
   width: 100dvw;
   height: 100dvh;
@@ -33,5 +40,13 @@
   border-radius: 10px;
   padding: 20px;
   margin-bottom: 15px;
-  transform: translateX(-50%);
+}
+
+@for $i from 1 through 4 {
+  .sheet:nth-child(#{$i}) {
+    @if $i%2 == 1 {
+      background-color: red;
+    }
+    transform: translateX(-50%) rotateZ(randomNum(10) + deg);
+  }
 }

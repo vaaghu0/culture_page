@@ -104,6 +104,7 @@ export const CoinSection = () => {
       .forEach((element: HTMLDivElement) => {
         t1.set(element, {
           y: "0vh",
+          duration: -1,
         }).to(element, {
           y: "-100vh",
           opacity: 0,
