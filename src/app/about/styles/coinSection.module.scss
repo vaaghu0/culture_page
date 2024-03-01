@@ -17,6 +17,15 @@
 .coinDescription {
   width: 100vw;
   height: 50vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  p {
+    opacity: 0.2;
+    font-size: 5em;
+  }
 }
 .coinDiv {
   width: auto;

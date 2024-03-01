@@ -6,9 +6,7 @@ import coinStyles from "../styles/coinSection.module.scss";
 //gsap
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
-
 gsap.registerPlugin(ScrollTrigger);
-
 type Prop = {
   text: string;
 };
@@ -113,18 +111,44 @@ export const CoinSection = () => {
       });
     return t1;
   };
+  const TextAnimation = () => {
+    let duration = 10;
+    let t1 = gsap.timeline({
+      scrollTrigger: {
+        trigger: section.current,
+        // markers: true,
+        scrub: true,
+        // pin: true,
+        start: "0vw",
+      },
+    });
+    gsap.utils
+      .toArray<HTMLDivElement>(".comet")
+      .forEach((element: HTMLDivElement) => {
+        t1.to(element, {
+          opacity: 1,
+          duration: duration,
+        });
+      });
+  };
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
-      const time = gsap.timeline();
-      time.add(coinRotationAimation(), 0);
-      time.add(coinAnimation(), 0);
-      time.add(sheetMovement(), ">15");
+      coinRotationAimation();
+      coinAnimation();
+      sheetMovement();
+      TextAnimation();
     });
     return () => ctx.revert();
   }, []);
   return (
     <section className={coinStyles.section} ref={section}>
-      <div className={coinStyles.coinDescription}></div>
+      <div className={coinStyles.coinDescription}>
+        <p className="comet">C</p>
+        <p className="comet">O</p>
+        <p className="comet">M</p>
+        <p className="comet">E</p>
+        <p className="comet">T</p>
+      </div>
       <div className={coinStyles.coinDiv}>
         <div ref={coin}>
           <Coin />
