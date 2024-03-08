@@ -109,7 +109,10 @@ export const IllustrationSection = () => {
     return () => ctx.revert();
   });
   return (
-    <section className={styles.coinSection} ref={sectionRef} id="section">
+    <section
+      className={styles.IllustrationSection}
+      ref={sectionRef}
+      id="section">
       <div
         className={styles.sectionHalfIllustration}
         ref={illustationSectionRef}>

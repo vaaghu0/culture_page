@@ -3,9 +3,19 @@
   height: 100dvh;
   background-color: rgb(0, 0, 0);
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: flex-start;
   align-items: flex-end;
+}
+.IllustrationSection {
+  @extend .section;
+  // background: linear-gradient(to bottom right, #11122e, #68bfe0, #68bfe0);
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  background-color: #545454;
+  // overflow: hidden;
 }
 .coinSection {
   @extend .section;
@@ -70,7 +80,8 @@
 .block {
   // background-color: pink;
   height: 350px;
-  width: 30dvw;
+  width: 40dvw;
+  padding: 10px;
   position: relative;
   // margin-bottom: 25px;
 }
