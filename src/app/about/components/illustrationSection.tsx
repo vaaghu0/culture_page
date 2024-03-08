@@ -1,19 +1,12 @@
-import {
-  useEffect,
-  useRef,
-  MutableRefObject,
-  createRef,
-  useState,
-  useLayoutEffect,
-} from "react";
+import { useState, useRef, MutableRefObject, useLayoutEffect } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import styles from "../styles.module.scss";
+import illustrationStyle from "../styles/illustrationSection.module.scss";
 import IllustrationBlock1 from "../assets/IllustrationBlock1";
 import IllustrationBlock2 from "../assets/IllustrationBlock2";
 import IllustrationBlock3 from "../assets/IllustrationBlock3";
 import IllustrationBlock4 from "../assets/IllustrationBlock4";
-import { time } from "console";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -28,151 +21,167 @@ export const IllustrationSection = () => {
   const block2: MutableRefObject<any> = useRef(null);
   const block3: MutableRefObject<any> = useRef(null);
   const block4: MutableRefObject<any> = useRef(null);
-  const illustrationDelay = 4;
+
+  const [illustrationSize, setSize] = useState("320px");
+
   const illustationTimeline = (count?: number): gsap.core.Timeline => {
     let panels = gsap.utils.toArray(".panel");
 
-    return gsap.timeline().to(panels, {
-      xPercent: -100 * (panels.length - 1),
-      ease: "none",
-      duration: 10,
+    return gsap.timeline().to(
+      panels,
+      {
+        xPercent: -100 * (panels.length - 1),
+        ease: "none",
+        duration: 10,
 
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        pin: sectionRef.current,
-        start: "top top",
-        scrub: true,
-        snap: {
-          snapTo: 1 / (panels.length - 1),
-          duration: 1,
-          delay: 0,
-          ease: "expo",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          pin: sectionRef.current,
+          start: "top top",
+          scrub: true,
+          snap: {
+            snapTo: 1 / (panels.length - 1),
+            duration: 0.2,
+            delay: 0,
+            ease: "sine.in",
+          },
+          // end: () => "+=" + sectionRef.current.offsetWidth,
         },
-        // end: () => "+=" + sectionRef.current.offsetWidth,
-        // markers: true,
       },
-    });
+      "<"
+    );
   };
   const textTimeline = (): gsap.core.Timeline => {
     let panels = gsap.utils.toArray(".textPanel");
 
-    return gsap.timeline().to(panels, {
-      yPercent: -100 * (panels.length - 1),
-      ease: "none",
-      duration: 1,
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        // pin: sectionRef.current,
-        start: "top top",
-        scrub: true,
-        snap: {
-          snapTo: 1 / (panels.length - 1),
-          duration: 1,
-          ease: "expo",
-        },
-        // end: () => "+=" + sectionRef.current.offsetWidth,
-        // markers: true,
-      },
-    });
-  };
-  const BlockTimeline = (block: MutableRefObject<null>): gsap.core.Timeline => {
-    return gsap
-      .timeline({
+    return gsap.timeline().to(
+      panels,
+      {
+        yPercent: -100 * (panels.length - 1),
+        ease: "none",
+        duration: 10,
+        opacity: 1,
         scrollTrigger: {
           trigger: sectionRef.current,
+          // pin: sectionRef.current,
+          start: "top top",
           scrub: true,
+          snap: {
+            snapTo: 1 / (panels.length - 1),
+            duration: 0.2,
+            delay: 0,
+            ease: "sine.in",
+          },
+          // end: () => "+=" + sectionRef.current.offsetWidth,
         },
-      })
-      .set(block.current, {
-        y: "100vh",
-        opacity: 0,
-      })
-      .from(block.current, {
-        duration: 5,
-        y: "100vh",
-        opacity: 0,
-      })
-      .to(block.current, {
-        delay: 3,
-        duration: 5,
-        y: "-100vh",
-        opacity: 0,
-      });
+      },
+      "<"
+    );
   };
   useLayoutEffect(() => {
+    if (sectionRef && sectionRef.current) {
+      let negativeSpace = 0.65;
+      let newSize = Math.max(
+        sectionRef.current.offsetWidth < sectionRef.current.offsetHeight
+          ? Math.floor(sectionRef.current.offsetWidth * negativeSpace)
+          : Math.floor(sectionRef.current.offsetHeight * negativeSpace),
+        30
+      );
+      let newSizeText = `${newSize}px`;
+      illustationSectionRef.current.style.maxWidth = `${newSize}px`;
+      illustationSectionRef.current.style.maxHeight = `${newSize}px`;
+      setSize(newSizeText);
+    }
     let ctx = gsap.context(() => {
       const timeline = gsap.timeline();
-      timeline.add(illustationTimeline(), 0);
-      // timeline.add(illustationTimeline(3, BlockTimeline(block1)));
-      timeline.add(textTimeline(), 0);
+      timeline.add(textTimeline(), "<");
+      timeline.add(illustationTimeline(), "<");
     }, sectionRef);
     return () => ctx.revert();
-  });
+  }, [sectionRef]);
   return (
     <section
-      className={styles.IllustrationSection}
+      className={illustrationStyle.IllustrationSection}
       ref={sectionRef}
       id="section">
       <div
-        className={styles.sectionHalfIllustration}
+        className={illustrationStyle.imgBlockContainer}
         ref={illustationSectionRef}>
         <div
           className={styles.IllustrationBlock + " panel"}
           id="illustration1"
           ref={illustrationBlock1}>
-          <IllustrationBlock1 width="350px" height="350px" />
+          <IllustrationBlock1
+            width={illustrationSize}
+            height={illustrationSize}
+          />
         </div>
         <div
           className={styles.IllustrationBlock + " panel"}
           id="illustration2"
           ref={illustrationBlock2}>
-          <IllustrationBlock2 width="350px" height="350px" />
+          <IllustrationBlock2
+            width={illustrationSize}
+            height={illustrationSize}
+          />
         </div>
         <div
           className={styles.IllustrationBlock + " panel"}
           id="illustration3"
           ref={illustrationBlock3}>
-          <IllustrationBlock3 width="350px" height="350px" />
+          <IllustrationBlock3
+            width={illustrationSize}
+            height={illustrationSize}
+          />
         </div>
         <div
           className={styles.IllustrationBlock + " panel"}
           id="illustration4"
           ref={illustrationBlock4}>
-          <IllustrationBlock4 width="350px" height="350px" />
+          <IllustrationBlock4
+            width={illustrationSize}
+            height={illustrationSize}
+          />
         </div>
       </div>
-      <div className={styles.sectionHalfText}>
-        <div className={styles.block + " textPanel"} ref={block1} id="block1">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore
-          deleniti reprehenderit ratione minus cupiditate, praesentium beatae
-          numquam. Veritatis fugit tempore ab, autem sapiente hic. Explicabo
-          quidem possimus fugiat earum commodi et, corporis ullam iusto nihil.
-          Sint tempora aperiam maiores quas vel architecto laudantium quos neque
-          cumque odio, ducimus qui quia.
+      <div className={illustrationStyle.textBlockContainer}>
+        <div
+          className={illustrationStyle.textBlock + " textPanel"}
+          ref={block1}
+          id="block1">
+          <h2>Empathy First</h2>
+          <p>
+            {`We understand that financial well-being is deeply personal.We
+          approach every situation with empathy, seeking to understand our
+          user's unique needs.`}
+          </p>
         </div>
-        <div className={styles.block + " textPanel"} ref={block2} id="block2">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia,
-          maiores dolore, saepe fugiat enim quis non dicta deserunt blanditiis
-          necessitatibus aut harum beatae eius velit natus? Delectus fugit
-          inventore tempora culpa doloremque cumque natus quas est commodi
-          veniam nisi accusantium dolor animi autem facilis ad esse,
-          necessitatibus magni laboriosam earum?
+        <div
+          className={illustrationStyle.textBlock + " textPanel"}
+          ref={block2}
+          id="block2">
+          <h2>Innovation with Purpose</h2>
+          <p>
+            {`We're committed to continuously improving and innovating, but always with the intention of serving the greater good.`}
+          </p>
         </div>
-        <div className={styles.block + " textPanel"} ref={block3} id="block3">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam omnis
-          sint perspiciatis veniam culpa consectetur saepe? Quaerat dolorem
-          perspiciatis reprehenderit dolores dicta minima. Blanditiis aliquid
-          tenetur corrupti debitis soluta culpa eveniet. Architecto id eum,
-          explicabo ea voluptates dicta corporis dolorem quidem at nam tenetur
-          fuga consequuntur expedita aut magni odit.
+        <div
+          className={illustrationStyle.textBlock + " textPanel"}
+          ref={block3}
+          id="block3">
+          <h2>Community Matters</h2>
+          <p>
+            {`We believe in the power of community, and we're dedicated to building a supportive ecosystem for our users.`}
+          </p>
         </div>
-        <div className={styles.block + " textPanel"} ref={block4} id="block4">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis beatae
-          deserunt sit quo voluptate fugit dolorum aspernatur numquam eum
-          voluptatibus repellat iure modi in ratione tenetur natus, ipsa magni
-          qui inventore accusamus architecto mollitia amet cumque? Sint vero,
-          doloremque tempore, obcaecati quidem illum consequatur harum doloribus
-          iure laudantium, dolores porro?
+        <div
+          className={illustrationStyle.textBlock + " textPanel"}
+          ref={block4}
+          id="block4">
+          <h2>Trust & Transparency</h2>
+          <p>
+            {`Trust is the cornerstone of our relationships. We're open, honest, and transparent in everything we do.`}
+          </p>
         </div>
       </div>
     </section>

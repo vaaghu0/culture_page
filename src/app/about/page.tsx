@@ -14,9 +14,10 @@ const Page = () => {
   return (
     <div id="main">
       <IllustrationSection />
-      <FoundersSection />
+      <section className={styles.section}></section>
+      {/* <FoundersSection />
       <TeamsSection />
-      <CoinSection />
+      <CoinSection /> */}
     </div>
   );
 };

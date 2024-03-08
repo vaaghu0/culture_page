@@ -1,0 +1,15 @@
+$mobileView: 700px;
+
+@mixin flex($direction: column, $justify: center, $align: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+.section {
+  width: 100dvw;
+  height: 100dvh;
+  background-color: rgb(0, 0, 0);
+  @include flex(column, flex-start, flex-end);
+}

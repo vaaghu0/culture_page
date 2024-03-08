@@ -1,0 +1,77 @@
+@import "./main.module.scss";
+
+.IllustrationSection {
+  @include flex(row, space-evenly);
+  height: 100vh;
+  background-color: #ffffff;
+  color: black;
+  @media (max-width: $mobileView) {
+    @include flex(column-reverse, space-evenly);
+  }
+}
+
+.__sectionHalf {
+  width: fit-content;
+  // min-width: 320px;
+  // height: 45dvh;
+  overflow: hidden;
+}
+
+.imgBlockContainer {
+  @extend .__sectionHalf;
+  // max-width: 320px;
+  // max-height: 320px;
+  margin: 20px;
+  overflow: hidden;
+  @include flex(row, flex-start);
+}
+
+.textBlockContainer {
+  @extend .__sectionHalf;
+  flex-direction: row;
+  height: 350px;
+
+  @media (min-width: $mobileView) {
+    height: 100vh;
+    @include flex(column, flex-start);
+  }
+}
+
+.illustrationBlock {
+  background: transparent;
+  position: relative;
+  // min-width: 50vw;
+  margin: 10px;
+}
+
+.textBlock {
+  // background-color: pink;
+  @media (min-width: $mobileView) {
+    min-height: 100vh;
+    width: 45vw;
+    @include flex(column, center, flex-start);
+  }
+  @include flex(column, center, center);
+  min-height: 350px;
+  width: 100dvw;
+  padding: 10%;
+  position: relative;
+  // margin-bottom: 25px;
+
+  h2 {
+    font-size: 2rem;
+    text-align: left;
+  }
+  p {
+    font-size: 1rem;
+    text-align: left;
+  }
+  @media (max-width: $mobileView) {
+    h2 {
+      text-align: center;
+    }
+    p {
+      text-align: center;
+    }
+  }
+}
