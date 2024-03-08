@@ -13,12 +13,10 @@ import TeamsSection from "./components/teamsSection";
 const Page = () => {
   return (
     <div id="main">
-      {/* <section className={styles.section}></section> */}
-      {/* <IllustrationSection /> */}
-      {/* <FoundersSection /> */}
-      {/* <CoinSection /> */}
+      <IllustrationSection />
+      <FoundersSection />
       <TeamsSection />
-      <section className={styles.coinSection}></section>
+      <CoinSection />
     </div>
   );
 };

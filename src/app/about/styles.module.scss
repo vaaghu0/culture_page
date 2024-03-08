@@ -6,6 +6,11 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-end;
+
+  &::-webkit-scrollbar {
+    appearance: none;
+    display: none;
+  }
 }
 .IllustrationSection {
   @extend .section;
@@ -16,6 +21,11 @@
   flex-direction: row;
   background-color: #545454;
   // overflow: hidden;
+
+  &::-webkit-scrollbar {
+    appearance: none;
+    display: none;
+  }
 }
 .coinSection {
   @extend .section;
@@ -26,6 +36,11 @@
   flex-direction: column;
   background-color: #545454;
   // overflow: hidden;
+
+  &::-webkit-scrollbar {
+    appearance: none;
+    display: none;
+  }
 }
 .foundersSection {
   display: flex;
@@ -34,6 +49,11 @@
   align-items: center;
   width: 100vw;
   height: 100vh;
+
+  &::-webkit-scrollbar {
+    appearance: none;
+    display: none;
+  }
 }
 .Illustrations {
   width: 100px;

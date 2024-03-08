@@ -1,9 +1,14 @@
 .section {
-  position: absolute;
-  width: 100%;
+  position: relative;
   height: 100vh;
+  min-height: 100vh;
+  min-width: 100vw;
   overflow: hidden;
-  box-sizing: border-box;
+
+  &::-webkit-scrollbar {
+    appearance: none;
+    display: none;
+  }
 }
 
 .gallery {
@@ -41,6 +46,7 @@
 
 .actions {
   position: absolute;
+  display: none;
   bottom: 25px;
   left: 50%;
   transform: translateX(-50%);

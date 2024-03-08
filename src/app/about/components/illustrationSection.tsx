@@ -102,9 +102,9 @@ export const IllustrationSection = () => {
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
       const timeline = gsap.timeline();
-      timeline.add(illustationTimeline());
+      timeline.add(illustationTimeline(), 0);
       // timeline.add(illustationTimeline(3, BlockTimeline(block1)));
-      textTimeline();
+      timeline.add(textTimeline(), 0);
     }, sectionRef);
     return () => ctx.revert();
   });

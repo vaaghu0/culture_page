@@ -85,6 +85,11 @@ body {
   overflow-x: hidden;
 }
 
+::-webkit-scrollbar {
+  appearance: none;
+  display: none;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
