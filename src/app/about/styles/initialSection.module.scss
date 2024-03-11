@@ -1,0 +1,30 @@
+@import "./main.module.scss";
+
+.initialSection {
+  @extend .section;
+  padding: 10%;
+}
+
+.oneLiner,
+.description {
+  width: 100%;
+  text-align: center;
+}
+.oneLiner {
+  font-size: 5rem;
+  margin: 2px;
+  margin-bottom: 3.5rem;
+  font-weight: 800;
+
+  @media (max-width: 700px) {
+    font-size: 3rem;
+  }
+  // line-height: 3.5rem;
+}
+.description {
+  font-size: 2rem;
+
+  @media (max-width: 700px) {
+    font-size: 1.2rem;
+  }
+}

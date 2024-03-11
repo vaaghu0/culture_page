@@ -5,6 +5,7 @@ import IllustrationSection from "./components/illustrationSection";
 import FoundersSection from "./components/foundersSection";
 import CoinSection from "./components/coinSection";
 import TeamsSection from "./components/teamsSection";
+import FirstSection from "./components/initialSection";
 //gsap
 // import { gsap } from "gsap";
 // import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -13,11 +14,12 @@ import TeamsSection from "./components/teamsSection";
 const Page = () => {
   return (
     <div id="main">
+      <FirstSection />
       <IllustrationSection />
+      <FoundersSection />
       <section className={styles.section}></section>
-      {/* <FoundersSection />
       <TeamsSection />
-      <CoinSection /> */}
+      <CoinSection />
     </div>
   );
 };

@@ -8,8 +8,9 @@ $mobileView: 700px;
 }
 
 .section {
-  width: 100dvw;
-  height: 100dvh;
-  background-color: rgb(0, 0, 0);
-  @include flex(column, flex-start, flex-end);
+  width: 100svw;
+  height: 100svh;
+  background-color: white;
+  color: black;
+  @include flex(column, center, center);
 }

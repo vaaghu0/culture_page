@@ -81,8 +81,8 @@
 
 html,
 body {
-  max-width: 100vw;
   overflow-x: hidden;
+  max-width: 100svw;
 }
 
 ::-webkit-scrollbar {
@@ -105,8 +105,8 @@ a {
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   html {
-    color-scheme: dark;
+    color-scheme: light;
   }
 }
