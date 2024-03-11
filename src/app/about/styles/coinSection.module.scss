@@ -1,3 +1,5 @@
+@import "./main.module.scss";
+
 @function randomNum($max) {
   $rand: random($max);
   $randomNum: floor($rand - ceil($max/2));
@@ -5,27 +7,39 @@
   @return $randomNum;
 }
 
-.section {
+.coinSection {
+  @extend .section;
   width: 100dvw;
   height: 100dvh;
-  background-color: rgb(0, 0, 0);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
+  background: linear-gradient(120deg, #12132f, #68bfe1);
+  @include flex(column, center, center);
 }
-.coinDescription {
-  width: 50vw;
-  height: 50vh;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-start;
 
-  p {
-    opacity: 0.2;
-    font-size: 5em;
+.info {
+  width: 85vw;
+  height: 50vh;
+  @include flex(column, flex-start, center);
+  color: white;
+}
+.oneLiner {
+  display: flex;
+  font-size: 5rem;
+}
+.oneLinerPartOne {
+  margin: 5px;
+  text-align: center;
+  span:nth-child(1) {
+    margin-left: 15px;
   }
+}
+.description {
+  font-size: 1rem;
+}
+
+.cometCharacter {
+  padding-right: 0px;
+  margin-right: 0px;
+  opacity: 0.1;
 }
 .coinDiv {
   width: auto;
@@ -37,7 +51,7 @@
   width: 250px;
   max-width: 80vw;
   position: absolute;
-  background-color: rgb(65, 65, 65);
+  background-color: #ffe9e9;
   bottom: 0px;
   left: 50%;
   font-size: 0.8em;
@@ -54,7 +68,7 @@
 @for $i from 1 through 5 {
   .sheet:nth-child(#{$i}) {
     @if $i%2 == 1 {
-      background-color: red;
+      background-color: #d9e6ff;
     }
     transform: translateX(-50%) rotateZ(randomNum(10) + deg);
   }

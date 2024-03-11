@@ -90,16 +90,6 @@ export const FoundersSection: React.FC = () => {
         },
         ">"
       );
-    // .to(".circle", {E
-    //   width: 40,
-    //   duration: 25,
-    //   repeat: 0,
-    //   scrollTrigger: {
-    //     trigger: sectionRef.current,
-    //     start: "top top",
-    //     scrub: true,
-    //   },
-    // });
   };
   const dotesTimeline = () => {
     return gsap.timeline().to(

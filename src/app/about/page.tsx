@@ -17,7 +17,7 @@ const Page = () => {
     <div id="main">
       {/* <FirstSection />
       <IllustrationSection /> */}
-      <FoundersSection />
+      {/* <FoundersSection /> */}
       {/* <section className={styles.section}></section> */}
       <CoinSection />
       {/* <TeamsSection /> */}

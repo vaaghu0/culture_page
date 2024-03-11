@@ -7,14 +7,12 @@ import coinStyles from "../styles/coinSection.module.scss";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
-type Prop = {
-  text: string;
-};
 
-const Sheet = (Prop: Prop) => {
+const Sheet: React.FC<{ text: string; title: string }> = ({ title, text }) => {
   return (
     <div className={coinStyles.sheet + " sheet"}>
-      <p>{Prop.text}</p>
+      <h3>{title}</h3>
+      <p>{text}</p>
     </div>
   );
 };
@@ -105,7 +103,7 @@ export const CoinSection = () => {
           duration: -1,
         }).to(element, {
           y: "-100vh",
-          delay: 1234,
+          delay: 100,
           duration: duration,
         });
       });
@@ -121,7 +119,7 @@ export const CoinSection = () => {
       },
     });
     gsap.utils
-      .toArray<HTMLDivElement>(".comet")
+      .toArray<HTMLDivElement>("." + coinStyles.cometCharacter)
       .forEach((element: HTMLDivElement) => {
         t1.to(element, {
           opacity: 1,
@@ -139,13 +137,21 @@ export const CoinSection = () => {
     return () => ctx.revert();
   }, []);
   return (
-    <section className={coinStyles.section} ref={section}>
-      <div className={coinStyles.coinDescription}>
-        <p className="comet">C</p>
-        <p className="comet">O</p>
-        <p className="comet">M</p>
-        <p className="comet">E</p>
-        <p className="comet">T</p>
+    <section className={coinStyles.coinSection} ref={section}>
+      <div className={coinStyles.info}>
+        <div className={coinStyles.oneLiner}>
+          <p className={coinStyles.oneLinerPartOne}>
+            We believe in THE
+            <span className={coinStyles.cometCharacter}>C</span>
+            <span className={coinStyles.cometCharacter}>O</span>
+            <span className={coinStyles.cometCharacter}>M</span>
+            <span className={coinStyles.cometCharacter}>E</span>
+            <span className={coinStyles.cometCharacter}>T</span>
+          </p>
+        </div>
+        <div className={coinStyles.description}>
+          {`At Vittae, we abide by "THE COMET," our guiding work culture values`}
+        </div>
       </div>
       <div className={coinStyles.coinDiv}>
         <div ref={coin}>
@@ -153,11 +159,26 @@ export const CoinSection = () => {
         </div>
       </div>
       <div className={coinStyles.sheetDiv}>
-        <Sheet text="1111Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, et! Repellat nesciunt quaerat obcaecati dolor iure! Voluptatum nulla vel iure perferendis nemo. Sapiente, id? Dolorem molestiae dignissimos laboriosam nesciunt ipsum repellendus, impedit dolores fuga est necessitatibus dolorum nam vitae placeat, ratione quis quos quaerat laborum pariatur. Accusantium accusamus nesciunt praesentium!" />
-        <Sheet text="2222Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla reiciendis labore dolor repellat, esse atque voluptatum repellendus autem quisquam iste expedita dolore doloremque optio delectus vel eaque eligendi quam. Temporibus maiores ut quae id molestiae dolore, architecto quia. Maxime illum illo qui itaque dolor reprehenderit unde accusantium molestiae perspiciatis eaque?" />
-        <Sheet text="3333Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla reiciendis labore dolor repellat, esse atque voluptatum repellendus autem quisquam iste expedita dolore doloremque optio delectus vel eaque eligendi quam. Temporibus maiores ut quae id molestiae dolore, architecto quia. Maxime illum illo qui itaque dolor reprehenderit unde accusantium molestiae perspiciatis eaque?" />
-        <Sheet text="4444Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla reiciendis labore dolor repellat, esse atque voluptatum repellendus autem quisquam iste expedita dolore doloremque optio delectus vel eaque eligendi quam. Temporibus maiores ut quae id molestiae dolore, architecto quia. Maxime illum illo qui itaque dolor reprehenderit unde accusantium molestiae perspiciatis eaque?" />
-        <Sheet text="5555Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla reiciendis labore dolor repellat, esse atque voluptatum repellendus autem quisquam iste expedita dolore doloremque optio delectus vel eaque eligendi quam. Temporibus maiores ut quae id molestiae dolore, architecto quia. Maxime illum illo qui itaque dolor reprehenderit unde accusantium molestiae perspiciatis eaque?" />
+        <Sheet
+          title="Transparency"
+          text="Be open and loud about what you feel. We believe honest communication is the true key to great collaboration and output."
+        />
+        <Sheet
+          title="Enterprising"
+          text="Curiosity mixed with the drive to impact and think out of the box is key to your personal growth. Take up challenges and bring out your thinking hats from time to time to showcase that you are willing to go the extra mile."
+        />
+        <Sheet
+          title="Micro-Productivity"
+          text="No task is too big, make sure that you are able to divide your tasks into smaller chunks and improve them with constant 360-degree feedback. This will also give you the opportunity to celebrate small wins."
+        />
+        <Sheet
+          title="Optimism"
+          text="Take on every day and every opportunity with a positive outlook. Believe in yourself and remember that you can do anything."
+        />
+        <Sheet
+          title="Championship"
+          text="Day zero should start with you being the champion for our customers, our brand & employees, and to your goals. You will be the facilitators of change and will lead the company across to future change"
+        />
       </div>
     </section>
   );
