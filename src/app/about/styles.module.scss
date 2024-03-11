@@ -37,19 +37,7 @@
   background-color: #545454;
   // overflow: hidden;
 }
-.foundersSection {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 100vh;
 
-  &::-webkit-scrollbar {
-    appearance: none;
-    display: none;
-  }
-}
 .Illustrations {
   width: 100px;
   height: 100px;
@@ -105,25 +93,6 @@
   // margin-bottom: 25px;
 }
 
-.foundersList {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  width: 70vw;
-  height: 90vh;
-  overflow: hidden;
-  div {
-    margin: 50px;
-    display: block;
-    // width: 80vw;
-    height: 90dvh;
-    min-width: 70vw;
-    border: 2px solid white;
-    margin: 0px;
-    background-color: aquamarine;
-  }
-}
 .dotes {
   display: flex;
   justify-content: flex-start;

@@ -1,0 +1,93 @@
+@import "./main.module.scss";
+
+.foundersSection {
+  @extend .section;
+  @include flex(column, center, center);
+}
+
+.foundersList {
+  @include flex(row, flex-start, center);
+  width: 90vw;
+  margin: 5vw;
+  // height: 90vh;
+  overflow: hidden;
+}
+.founderCard {
+  // margin: 50px;
+  display: inline-block;
+  // margin: 3px 20px;
+  padding: 3px 17px;
+  min-width: 95vw;
+  max-width: 95vw;
+  @include flex(column, flex-start, center);
+}
+
+.foundersImage,
+.description {
+  width: min(90%, 90svw, 90svh);
+  height: auto;
+}
+.foundersImage {
+  margin-bottom: 10px;
+}
+.description {
+  font-size: 1rem;
+  text-align: left;
+  margin: 20px 5px;
+}
+
+.secondaryFounderCard {
+  @include flex(column, flex-start, center);
+  position: absolute;
+  left: 0px;
+  top: 20%;
+  transform: translateY(-20%);
+  max-width: 25%;
+  font-weight: 800;
+  margin-top: 10px;
+  @media (max-width: 700) {
+    @include flex(row-reverse, space-between, center);
+  }
+  & > div {
+    width: 100%;
+  }
+}
+.founderInfo {
+  width: 100%;
+  @include flex(column, flex-start, flex-start);
+  div:nth-child(1) {
+    width: 100%;
+    @include flex(row, flex-start, center);
+    gap: 15px;
+  }
+  font-size: 1rem;
+  font-weight: 400;
+}
+.linkedinIcon {
+  width: 1.5rem;
+}
+.founderOneLiner {
+  font-size: 3em;
+}
+
+@media (max-width: 700px) {
+  .foundersImage,
+  .description {
+    width: 95%;
+  }
+  .secondaryFounderCard {
+    position: static;
+    @include flex(row-reverse, space-between, center);
+    min-width: 95%;
+    text-align: right;
+    top: 0%;
+    transform: translateY(0%);
+  }
+  .founderInfo {
+    text-align: left;
+  }
+  .founderOneLiner {
+    font-size: 1em;
+    max-width: 20%;
+  }
+}

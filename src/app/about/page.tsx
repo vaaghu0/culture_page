@@ -12,14 +12,15 @@ import FirstSection from "./components/initialSection";
 // gsap.registerPlugin(ScrollTrigger);
 
 const Page = () => {
+  console.log(navigator);
   return (
     <div id="main">
-      <FirstSection />
-      <IllustrationSection />
+      {/* <FirstSection />
+      <IllustrationSection /> */}
       <FoundersSection />
-      <section className={styles.section}></section>
-      <TeamsSection />
+      {/* <section className={styles.section}></section> */}
       <CoinSection />
+      {/* <TeamsSection /> */}
     </div>
   );
 };

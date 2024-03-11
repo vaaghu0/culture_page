@@ -1,4 +1,4 @@
-import { useState, useRef, MutableRefObject, useLayoutEffect } from "react";
+import { useState, useRef, MutableRefObject, useEffect } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import styles from "../styles.module.scss";
@@ -78,9 +78,15 @@ export const IllustrationSection = () => {
       "<"
     );
   };
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (sectionRef && sectionRef.current) {
-      let negativeSpace = 0.65;
+      let negativeSpace =
+        sectionRef.current.offsetWidth < 700
+          ? 0.85
+          : sectionRef.current.offsetWidth > sectionRef.current.offsetHeight
+          ? 0.65
+          : 0.5;
+
       let newSize = Math.max(
         sectionRef.current.offsetWidth < sectionRef.current.offsetHeight
           ? Math.floor(sectionRef.current.offsetWidth * negativeSpace)
