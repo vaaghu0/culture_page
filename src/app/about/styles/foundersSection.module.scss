@@ -8,27 +8,28 @@
 .foundersList {
   @include flex(row, flex-start, center);
   width: 90vw;
-  margin: 5vw;
+  // margin: 5vw;
   // height: 90vh;
-  overflow: hidden;
+  overflow: visible;
 }
 .founderCard {
-  // margin: 50px;
+  margin: 0px;
   display: inline-block;
   // margin: 3px 20px;
   padding: 3px 17px;
-  min-width: 95vw;
-  max-width: 95vw;
+  min-width: 100vw;
+  max-width: 100vw;
   @include flex(column, flex-start, center);
 }
 
+.foundersImage {
+  margin-bottom: 5px;
+}
 .foundersImage,
 .description {
+  width: min(75%, 75svw, 75svh);
   width: min(90%, 90svw, 90svh);
   height: auto;
-}
-.foundersImage {
-  margin-bottom: 10px;
 }
 .description {
   font-size: 1rem;

@@ -73,7 +73,7 @@ export const FoundersSection: React.FC = () => {
           scrollTrigger: {
             trigger: sectionRef.current,
             pin: sectionRef.current,
-            start: "top top",
+            start: "top",
             snap: {
               snapTo: 1 / (panels.length - 1),
               duration: 1,
