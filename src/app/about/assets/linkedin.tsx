@@ -1,7 +1,4 @@
-export const Linkedin: React.FC<{ link: string; className?: string }> = ({
-  link,
-  className,
-}) => {
+export const Linkedin: React.FC<{ className?: string }> = ({ className }) => {
   return (
     <svg
       className={className}

@@ -1,19 +1,84 @@
-.section {
+@import "./main.module.scss";
+.teamsSection {
+  @extend .section;
   position: relative;
-  height: 100vh;
-  min-height: 100vh;
   min-width: 100vw;
-  overflow: hidden;
-
-  &::-webkit-scrollbar {
-    appearance: none;
-    display: none;
-  }
+}
+.info {
+  @include flex(column, flex-start, center);
+  width: 60vw;
 }
 
+.oneLiner {
+  font-size: 3rem;
+  text-align: center;
+}
+.description {
+  font-size: 1rem;
+  text-align: center;
+}
+.member {
+  margin: 10px 40px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 14rem;
+  height: 18rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+
+  @include flex(column, flex-start, center);
+  &:focus {
+    background-color: red;
+    .memberInfo {
+      display: flex;
+    }
+  }
+}
+.memberImage {
+  height: 18rem;
+  width: auto;
+  z-index: 1;
+}
+.memberBackgroundImage {
+  height: 18rem;
+  width: auto;
+  position: absolute;
+  top: 0px;
+  z-index: 0;
+}
+.memberIcon {
+  width: 1rem;
+}
+.memberInfo {
+  @include flex(column, center, flex-start);
+  font-size: 1rem;
+  width: 60%;
+  & > div {
+    width: 100%;
+    @include flex(row, space-between, center);
+  }
+  display: none;
+}
+.memberDetails {
+  @include flex(column, flex-start, flex-start);
+  width: 100%;
+  p {
+    height: 0.5rem;
+    width: fit-content;
+    font-size: 0.4rem;
+  }
+}
+.memberDescription {
+  width: 100%;
+  font-size: 0.5rem;
+}
 .gallery {
   min-width: 100vw;
-  min-height: 100vh;
+  display: inline-block;
+  height: 25rem;
 }
 
 .teams {
@@ -23,25 +88,8 @@
   top: 40%;
   left: 50%;
   transform: translate(-50%, 0%);
-
-  div,
-  li {
-    margin: 10px 40px;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    width: 14rem;
-    height: 18rem;
-    text-align: center;
-    line-height: 18rem;
-    font-size: 2rem;
-    font-family: sans-serif;
-    background-color: #9d7cce;
-    position: absolute;
-    top: 0;
-    left: 0;
-    border-radius: 0.8rem;
-  }
+  padding-bottom: 0px;
+  margin-bottom: 0px;
 }
 
 .actions {

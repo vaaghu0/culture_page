@@ -9,8 +9,8 @@
 
 .coinSection {
   @extend .section;
-  width: 100dvw;
-  height: 100dvh;
+  width: 100vw;
+  height: 100vh;
   background: linear-gradient(120deg, #12132f, #68bfe1);
   @include flex(column, center, center);
 }

@@ -1,0 +1,49 @@
+@import "./main.module.scss";
+
+.endSection {
+  @extend .section;
+  @include flex(column, flex-start, center);
+  position: relative;
+  min-height: auto;
+  height: auto;
+}
+.info {
+  // position: relative;
+  // top: 40%;
+  // transform: translateY(-50%);
+  width: 78vw;
+  @include flex(column, flex-start, center);
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 10px 5px;
+  border-radius: 15px;
+  z-index: 1;
+  @media (min-height: 700) {
+    width: 62vw;
+  }
+}
+.oneLiner {
+  font-size: 60px;
+  font-weight: 800;
+  padding: 1.2rem;
+  text-align: center;
+}
+
+.description {
+  font-size: 20px;
+  text-align: center;
+}
+
+.peopleImage {
+  // width: 100%;
+  width: 100%;
+  height: auto;
+  // max-height: 75%;
+  position: relative;
+  bottom: 0px;
+  // margin-bottom: 0px;
+  z-index: 0;
+  @media (max-width: 700) {
+    width: 100%;
+    height: auto;
+  }
+}

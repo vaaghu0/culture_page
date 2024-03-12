@@ -26,19 +26,20 @@ export const CoinSection = () => {
       .timeline({
         scrollTrigger: {
           trigger: section.current,
-          pin: section.current,
+          start: "top",
+          pin: true,
           scrub: true,
         },
       })
       .set(coin.current, {
-        xPercent: -100,
+        x: "-60vw",
         visibility: "visible",
         scale: section.current.offsetHeight / 1000,
       })
       .to(
         coin.current,
         {
-          x: "120vw",
+          x: "60vw",
           duration: duration * 2,
           ease: "none",
         },
@@ -68,7 +69,7 @@ export const CoinSection = () => {
       .timeline({
         scrollTrigger: {
           trigger: section.current,
-          start: "-1vh",
+          start: "top",
           scrub: true,
         },
       })
@@ -89,7 +90,7 @@ export const CoinSection = () => {
     let t1 = gsap.timeline({
       scrollTrigger: {
         trigger: section.current,
-        start: "-1vh",
+        start: "top",
         // pin: section.current,
         scrub: true,
       },
@@ -109,12 +110,12 @@ export const CoinSection = () => {
       });
     return t1;
   };
-  const TextAnimation = () => {
+  const TextAnimation = (): gsap.core.Timeline => {
     let duration = 5;
     let t1 = gsap.timeline({
       scrollTrigger: {
         trigger: section.current,
-        start: "-1vh",
+        start: "top",
         scrub: true,
       },
     });
@@ -126,13 +127,15 @@ export const CoinSection = () => {
           duration: duration,
         });
       });
+    return t1;
   };
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
-      TextAnimation();
-      coinRotationAimation();
-      coinAnimation();
-      sheetMovement();
+      const t1 = gsap.timeline();
+      t1.add(TextAnimation(), "<");
+      t1.add(coinRotationAimation(), "<");
+      t1.add(coinAnimation(), "<");
+      t1.add(sheetMovement(), "<");
     });
     return () => ctx.revert();
   }, []);

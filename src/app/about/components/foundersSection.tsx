@@ -37,7 +37,7 @@ const FounderCard: React.FC<Props> = ({ name }) => {
             <p className={foundersSectionStyle.founderName}>{name}</p>
             <Linkedin
               className={foundersSectionStyle.linkedinIcon}
-              link="https://google.com"
+              // link="https://google.com"
             />
           </div>
           <div>
