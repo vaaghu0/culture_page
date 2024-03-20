@@ -33,11 +33,12 @@ export const IllustrationSection = () => {
         xPercent: -100 * (panels.length - 1),
         ease: "none",
         duration: 10,
-
         scrollTrigger: {
+          markers: true,
           trigger: sectionRef.current,
           pin: sectionRef.current,
           start: "top top",
+          end: "center+=300px center",
           scrub: true,
           snap: {
             snapTo: 1 / (panels.length - 1),
@@ -60,11 +61,15 @@ export const IllustrationSection = () => {
         yPercent: -100 * (panels.length - 1),
         ease: "none",
         duration: 10,
+        markers: true,
         opacity: 1,
+
         scrollTrigger: {
+          markers: true,
           trigger: sectionRef.current,
           // pin: sectionRef.current,
           start: "top top",
+          end: "center+=300px center",
           scrub: true,
           snap: {
             snapTo: 1 / (panels.length - 1),

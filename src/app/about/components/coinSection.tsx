@@ -24,11 +24,13 @@ export const CoinSection = () => {
     const duration = 100;
     return gsap
       .timeline({
+        delay: 10,
         scrollTrigger: {
+          start: "top top",
           trigger: section.current,
-          start: "top",
           pin: true,
           scrub: true,
+          markers: true,
         },
       })
       .set(coin.current, {
@@ -76,7 +78,7 @@ export const CoinSection = () => {
       .to(
         coin.current,
         {
-          duration: 1000000000,
+          duration: 1000,
           rotationZ: 360,
           ease: "none",
           repeat: -1,
@@ -86,7 +88,7 @@ export const CoinSection = () => {
       );
   };
   const sheetMovement = () => {
-    let duration = 100000000000000 * 1000;
+    let duration = 1000;
     let t1 = gsap.timeline({
       scrollTrigger: {
         trigger: section.current,
@@ -136,6 +138,7 @@ export const CoinSection = () => {
       t1.add(coinRotationAimation(), "<");
       t1.add(coinAnimation(), "<");
       t1.add(sheetMovement(), "<");
+      return t1;
     });
     return () => ctx.revert();
   }, []);

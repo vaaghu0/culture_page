@@ -17,7 +17,7 @@ const Page = () => {
   return (
     <div id="main">
       <FirstSection />
-      <IllustrationSection />
+      {/* <IllustrationSection /> */}
       <CoinSection />
       <TeamsSection />
       <FoundersSection />
