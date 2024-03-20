@@ -1,4 +1,4 @@
-import { useState, useRef, MutableRefObject, useEffect } from "react";
+import { useState, useRef, MutableRefObject, useLayoutEffect } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import styles from "../styles.module.scss";
@@ -24,7 +24,7 @@ export const IllustrationSection = () => {
 
   const [illustrationSize, setSize] = useState("320px");
 
-  const illustationTimeline = (count?: number): gsap.core.Timeline => {
+  const illustationTimeline = (): gsap.core.Timeline => {
     let panels = gsap.utils.toArray(".panel");
 
     return gsap.timeline().to(
@@ -36,9 +36,8 @@ export const IllustrationSection = () => {
         scrollTrigger: {
           markers: true,
           trigger: sectionRef.current,
-          pin: sectionRef.current,
+          pin: true,
           start: "top top",
-          end: "center+=300px center",
           scrub: true,
           snap: {
             snapTo: 1 / (panels.length - 1),
@@ -61,15 +60,9 @@ export const IllustrationSection = () => {
         yPercent: -100 * (panels.length - 1),
         ease: "none",
         duration: 10,
-        markers: true,
-        opacity: 1,
-
         scrollTrigger: {
-          markers: true,
           trigger: sectionRef.current,
-          // pin: sectionRef.current,
           start: "top top",
-          end: "center+=300px center",
           scrub: true,
           snap: {
             snapTo: 1 / (panels.length - 1),
@@ -83,7 +76,7 @@ export const IllustrationSection = () => {
       "<"
     );
   };
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (sectionRef && sectionRef.current) {
       let negativeSpace =
         sectionRef.current.offsetWidth < 700
@@ -107,6 +100,7 @@ export const IllustrationSection = () => {
       const timeline = gsap.timeline();
       timeline.add(textTimeline(), "<");
       timeline.add(illustationTimeline(), "<");
+      return timeline;
     }, sectionRef);
     return () => ctx.revert();
   }, [sectionRef]);

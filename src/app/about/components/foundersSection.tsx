@@ -63,7 +63,6 @@ export const FoundersSection: React.FC = () => {
 
   const foundersListTimeline = () => {
     let panels = gsap.utils.toArray("." + foundersSectionStyle.founderCard);
-    console.log(panels);
     return gsap
       .timeline({})
       .set(".circle", { width: "10px" }, 0)
