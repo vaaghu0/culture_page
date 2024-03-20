@@ -24,6 +24,10 @@
 .oneLiner {
   display: flex;
   font-size: 5rem;
+
+  @media (max-height: 700px) {
+    font-size: 3rem;
+  }
 }
 .oneLinerPartOne {
   margin: 5px;
@@ -34,6 +38,7 @@
 }
 .description {
   font-size: 1rem;
+  text-align: center;
 }
 
 .cometCharacter {

@@ -3,29 +3,24 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import styles from "../styles.module.scss";
 import illustrationStyle from "../styles/illustrationSection.module.scss";
-import IllustrationBlock1 from "../assets/IllustrationBlock1";
-import IllustrationBlock2 from "../assets/IllustrationBlock2";
-import IllustrationBlock3 from "../assets/IllustrationBlock3";
-import IllustrationBlock4 from "../assets/IllustrationBlock4";
+
+import {
+  illustration1,
+  illustration2,
+  illustration3,
+  illustration4,
+} from "../assets/illustrations";
+import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export const IllustrationSection = () => {
   const sectionRef: MutableRefObject<any> = useRef();
   const illustationSectionRef: MutableRefObject<any> = useRef(null);
-  const illustrationBlock1: MutableRefObject<any> = useRef(null);
-  const illustrationBlock2 = useRef(null);
-  const illustrationBlock3 = useRef(null);
-  const illustrationBlock4 = useRef(null);
-  const block1: MutableRefObject<any> = useRef(null);
-  const block2: MutableRefObject<any> = useRef(null);
-  const block3: MutableRefObject<any> = useRef(null);
-  const block4: MutableRefObject<any> = useRef(null);
-
   const [illustrationSize, setSize] = useState("320px");
 
   const illustationTimeline = (): gsap.core.Timeline => {
-    let panels = gsap.utils.toArray(".panel");
+    let panels = gsap.utils.toArray("." + styles.IllustrationBlock);
 
     return gsap.timeline().to(
       panels,
@@ -34,7 +29,6 @@ export const IllustrationSection = () => {
         ease: "none",
         duration: 10,
         scrollTrigger: {
-          markers: true,
           trigger: sectionRef.current,
           pin: true,
           start: "top top",
@@ -52,7 +46,7 @@ export const IllustrationSection = () => {
     );
   };
   const textTimeline = (): gsap.core.Timeline => {
-    let panels = gsap.utils.toArray(".textPanel");
+    let panels = gsap.utils.toArray("." + illustrationStyle.textBlock);
 
     return gsap.timeline().to(
       panels,
@@ -112,48 +106,37 @@ export const IllustrationSection = () => {
       <div
         className={illustrationStyle.imgBlockContainer}
         ref={illustationSectionRef}>
-        <div
-          className={styles.IllustrationBlock + " panel"}
-          id="illustration1"
-          ref={illustrationBlock1}>
-          <IllustrationBlock1
-            width={illustrationSize}
-            height={illustrationSize}
+        <div className={styles.IllustrationBlock} id="illustration1">
+          <Image
+            alt=""
+            src={illustration1}
+            style={{ width: illustrationSize, height: illustrationSize }}
           />
         </div>
-        <div
-          className={styles.IllustrationBlock + " panel"}
-          id="illustration2"
-          ref={illustrationBlock2}>
-          <IllustrationBlock2
-            width={illustrationSize}
-            height={illustrationSize}
+        <div className={styles.IllustrationBlock} id="illustration2">
+          <Image
+            alt=""
+            src={illustration2}
+            style={{ width: illustrationSize, height: illustrationSize }}
           />
         </div>
-        <div
-          className={styles.IllustrationBlock + " panel"}
-          id="illustration3"
-          ref={illustrationBlock3}>
-          <IllustrationBlock3
-            width={illustrationSize}
-            height={illustrationSize}
+        <div className={styles.IllustrationBlock} id="illustration3">
+          <Image
+            alt=""
+            src={illustration3}
+            style={{ width: illustrationSize, height: illustrationSize }}
           />
         </div>
-        <div
-          className={styles.IllustrationBlock + " panel"}
-          id="illustration4"
-          ref={illustrationBlock4}>
-          <IllustrationBlock4
-            width={illustrationSize}
-            height={illustrationSize}
+        <div className={styles.IllustrationBlock} id="illustration4">
+          <Image
+            alt=""
+            src={illustration4}
+            style={{ width: illustrationSize, height: illustrationSize }}
           />
         </div>
       </div>
       <div className={illustrationStyle.textBlockContainer}>
-        <div
-          className={illustrationStyle.textBlock + " textPanel"}
-          ref={block1}
-          id="block1">
+        <div className={illustrationStyle.textBlock} id="block1">
           <h2>Empathy First</h2>
           <p>
             {`We understand that financial well-being is deeply personal.We
@@ -161,28 +144,19 @@ export const IllustrationSection = () => {
           user's unique needs.`}
           </p>
         </div>
-        <div
-          className={illustrationStyle.textBlock + " textPanel"}
-          ref={block2}
-          id="block2">
+        <div className={illustrationStyle.textBlock} id="block2">
           <h2>Innovation with Purpose</h2>
           <p>
             {`We're committed to continuously improving and innovating, but always with the intention of serving the greater good.`}
           </p>
         </div>
-        <div
-          className={illustrationStyle.textBlock + " textPanel"}
-          ref={block3}
-          id="block3">
+        <div className={illustrationStyle.textBlock} id="block3">
           <h2>Community Matters</h2>
           <p>
             {`We believe in the power of community, and we're dedicated to building a supportive ecosystem for our users.`}
           </p>
         </div>
-        <div
-          className={illustrationStyle.textBlock + " textPanel"}
-          ref={block4}
-          id="block4">
+        <div className={illustrationStyle.textBlock} id="block4">
           <h2>Trust & Transparency</h2>
           <p>
             {`Trust is the cornerstone of our relationships. We're open, honest, and transparent in everything we do.`}

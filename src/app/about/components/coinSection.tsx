@@ -30,7 +30,6 @@ export const CoinSection = () => {
           trigger: section.current,
           pin: true,
           scrub: true,
-          markers: true,
         },
       })
       .set(coin.current, {

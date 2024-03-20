@@ -15,14 +15,14 @@ import EndSection from "./components/endSection";
 
 const Page = () => {
   return (
-    <div id="main">
+    <>
       <FirstSection />
       <IllustrationSection />
       <CoinSection />
       <TeamsSection />
       <FoundersSection />
       <EndSection />
-    </div>
+    </>
   );
 };
 export default Page;

@@ -3,6 +3,7 @@
   @extend .section;
   position: relative;
   min-width: 100vw;
+  height: auto;
 }
 .info {
   @include flex(column, flex-start, center);
