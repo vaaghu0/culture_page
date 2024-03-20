@@ -18,8 +18,8 @@ const Page = () => {
     <>
       <FirstSection />
       <IllustrationSection />
-      <CoinSection />
       <TeamsSection />
+      <CoinSection />
       <FoundersSection />
       <EndSection />
     </>

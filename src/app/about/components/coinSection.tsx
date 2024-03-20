@@ -154,9 +154,9 @@ export const CoinSection = () => {
             <span className={coinStyles.cometCharacter}>T</span>
           </p>
         </div>
-        <div className={coinStyles.description}>
+        <p className={coinStyles.description}>
           {`At Vittae, we abide by "THE COMET," our guiding work culture values`}
-        </div>
+        </p>
       </div>
       <div className={coinStyles.coinDiv}>
         <div ref={coin}>

@@ -21,17 +21,16 @@
   @include flex(column, flex-start, center);
   color: white;
 }
-.oneLiner {
-  display: flex;
-  font-size: 5rem;
-
-  @media (max-height: 700px) {
-    font-size: 3rem;
-  }
-}
+// .oneLiner {
+// }
 .oneLinerPartOne {
   margin: 5px;
   text-align: center;
+  font-size: 3rem;
+
+  @media (max-width: 700px) {
+    font-size: 2rem;
+  }
   span:nth-child(1) {
     margin-left: 15px;
   }
@@ -39,6 +38,9 @@
 .description {
   font-size: 1rem;
   text-align: center;
+  @media (max-width: 700px) {
+    font-size: 14px;
+  }
 }
 
 .cometCharacter {
@@ -68,6 +70,15 @@
   border-radius: 10px;
   padding: 20px;
   margin-bottom: 15px;
+  h3 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  p {
+    font-size: 0.7rem;
+    margin-top: 1rem;
+    text-align: center;
+  }
 }
 
 @for $i from 1 through 5 {

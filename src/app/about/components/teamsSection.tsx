@@ -1,4 +1,4 @@
-import { MutableRefObject, useLayoutEffect } from "react";
+import { MutableRefObject, Ref, useLayoutEffect, useState } from "react";
 
 import { teamsSectionStyle } from "../styles";
 //gsap
@@ -20,10 +20,28 @@ const Member: React.FC<{ name: string; title: string; hobbie?: string }> = ({
   title,
   hobbie,
 }) => {
+  let MemberClasName = teamsSectionStyle.member;
+  const [clicked, setClicked] = useState(false);
+
+  const backgroundImgRef: MutableRefObject<any> = useRef(null);
+  const handleClick = () => {
+    setClicked(!clicked);
+    MemberClasName =
+      MemberClasName == teamsSectionStyle.member
+        ? teamsSectionStyle.memberActive
+        : teamsSectionStyle.member;
+    console.log(MemberClasName);
+  };
+
   return (
-    <li className={teamsSectionStyle.member}>
+    <li
+      className={
+        !clicked ? teamsSectionStyle.member : teamsSectionStyle.memberActive
+      }
+      onClick={handleClick}>
       <Image
         className={teamsSectionStyle.memberBackgroundImage}
+        ref={backgroundImgRef}
         src={background}
         alt="background"
       />

@@ -13,4 +13,5 @@ $mobileView: 700px;
   background-color: white;
   color: black;
   @include flex(column, center, center);
+  z-index: 0;
 }

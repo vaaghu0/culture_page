@@ -4,6 +4,7 @@
   position: relative;
   min-width: 100vw;
   height: auto;
+  z-index: 1;
 }
 .info {
   @include flex(column, flex-start, center);
@@ -18,79 +19,103 @@
   font-size: 1rem;
   text-align: center;
 }
+.teams {
+  position: absolute;
+  width: 16rem;
+  height: 16rem;
+  // top: 40%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}
+
 .member {
   margin: 10px 40px;
   list-style: none;
   padding: 0;
   margin: 0;
-  width: 14rem;
-  height: 18rem;
+  width: 16rem;
+  // height: 18rem;
   position: absolute;
   top: 0;
   left: 0;
   overflow-x: hidden;
-
+  border-radius: 12px;
   @include flex(column, flex-start, center);
-  &:focus {
-    background-color: red;
-    .memberInfo {
-      display: flex;
-    }
+  z-index: 0;
+}
+.memberActive {
+  @extend .member;
+  box-shadow: 0px 0px 15px black;
+  background-color: #ffffff;
+  z-index: 10;
+  .memberBackgroundImage {
+    visibility: visible;
+  }
+  .memberInfo {
+    display: flex;
   }
 }
 .memberImage {
-  height: 18rem;
+  height: 16rem;
   width: auto;
   z-index: 1;
 }
 .memberBackgroundImage {
   height: 18rem;
-  width: auto;
   position: absolute;
   top: 0px;
   z-index: 0;
+  visibility: hidden;
+  transform: translateY(-2rem);
 }
 .memberIcon {
-  width: 1rem;
+  width: 2.5rem;
 }
 .memberInfo {
   @include flex(column, center, flex-start);
   font-size: 1rem;
-  width: 60%;
+  padding: 10px;
+  width: 85%;
+  display: none;
   & > div {
     width: 100%;
     @include flex(row, space-between, center);
   }
-  display: none;
 }
 .memberDetails {
   @include flex(column, flex-start, flex-start);
   width: 100%;
   p {
-    height: 0.5rem;
+    // height: 0.5rem;
     width: fit-content;
-    font-size: 0.4rem;
+  }
+  p:nth-child(1) {
+    font-weight: 700;
+    font-size: 1.2rem;
+  }
+  p:nth-child(2) {
+    font-weight: 600;
+    font-size: 0.72rem;
+  }
+  p:nth-child(3) {
+    font-weight: 600;
+    font-size: 0.72rem;
+    opacity: 0.5;
   }
 }
 .memberDescription {
   width: 100%;
-  font-size: 0.5rem;
+  font-size: 0.6rem;
+  font-weight: 500;
+  margin-top: 10px;
 }
 .gallery {
   min-width: 100vw;
   display: inline-block;
   height: 25rem;
-}
-
-.teams {
-  position: absolute;
-  width: 14rem;
-  height: 18rem;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, 0%);
-  padding-bottom: 0px;
-  margin-bottom: 0px;
+  @include flex(column, flex-end, center);
 }
 
 .actions {
@@ -107,20 +132,11 @@
   border: none;
   padding: 8px 14px;
   background: #414141;
-  background-image: -webkit-linear-gradient(top, #575757, #414141);
-  background-image: -moz-linear-gradient(top, #575757, #414141);
-  background-image: -ms-linear-gradient(top, #575757, #414141);
-  background-image: -o-linear-gradient(top, #575757, #414141);
-  background-image: linear-gradient(to bottom, #575757, #414141);
   text-shadow: 0px 1px 0px #414141;
-  -webkit-box-shadow: 0px 1px 0px 414141;
-  -moz-box-shadow: 0px 1px 0px 414141;
   box-shadow: 0px 1px 0px 414141;
   color: #ffffff;
   text-decoration: none;
   margin: 0 auto 10px;
-  -webkit-border-radius: 4;
-  -moz-border-radius: 4;
   border-radius: 4px;
   padding: 12px 25px;
   font-family: "Signika Negative", sans-serif;
@@ -129,20 +145,11 @@
   cursor: pointer;
   font-size: 13px;
   line-height: 18px;
-
   font-size: 20px;
   font-weight: 400;
 
   &:hover {
-    background: #57a818;
-    background-image: -webkit-linear-gradient(top, #57a818, #4d9916);
-    background-image: -moz-linear-gradient(top, #57a818, #4d9916);
-    background-image: -ms-linear-gradient(top, #57a818, #4d9916);
-    background-image: -o-linear-gradient(top, #57a818, #4d9916);
-    background-image: linear-gradient(to bottom, #57a818, #4d9916);
-    text-shadow: 0px 1px 0px #32610e;
-    -webkit-box-shadow: 0px 1px 0px fefefe;
-    -moz-box-shadow: 0px 1px 0px fefefe;
+    background: red;
     box-shadow: 0px 1px 0px fefefe;
     color: #ffffff;
     text-decoration: none;
