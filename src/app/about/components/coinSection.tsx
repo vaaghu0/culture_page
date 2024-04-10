@@ -49,7 +49,7 @@ export const CoinSection = () => {
       .to(
         coin.current,
         {
-          yPercent: -200,
+          y: "-30vh",
           duration: duration,
           ease: "power1.out",
         },
@@ -58,7 +58,7 @@ export const CoinSection = () => {
       .to(
         coin.current,
         {
-          yPercent: 0,
+          y: "0vh",
           duration: duration,
           ease: "power1.in",
         },

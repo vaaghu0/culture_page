@@ -22,15 +22,15 @@
   }
 }
 .oneLiner {
-  font-size: 60px;
-  font-weight: 800;
+  @include header;
+  font-size: clamp(30px, 4vw, 60px);
   padding: 1.2rem;
-  text-align: center;
+  width: 75vw;
 }
 
 .description {
-  font-size: 20px;
-  text-align: center;
+  @include description;
+  width: 75vw;
 }
 
 .peopleImage {

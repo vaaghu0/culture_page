@@ -40,7 +40,7 @@
 .illustrationBlock {
   background: transparent;
   position: relative;
-  // min-width: 50vw;
+  max-width: 50vw;
   margin: 10px;
 }
 
@@ -57,12 +57,15 @@
   position: relative;
 
   h2 {
-    font-size: 2rem;
+    @include header;
+
+    font-size: clamp(30px, 4vw, 40px);
     text-align: left;
-    margin-bottom: 1rem;
+    margin-bottom: 3vw;
   }
   p {
-    font-size: 1rem;
+    @include description;
+    font-size: clamp(16px, 1vw, 20px);
     text-align: left;
   }
   @media (max-width: $mobileView) {

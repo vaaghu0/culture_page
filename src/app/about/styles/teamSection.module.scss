@@ -12,12 +12,12 @@
 }
 
 .oneLiner {
-  font-size: 3rem;
-  text-align: center;
+  @include header;
+  font-size: clamp(30px, 4vw, 50px);
+  margin-bottom: 1rem;
 }
 .description {
-  font-size: 1rem;
-  text-align: center;
+  @include description;
 }
 .teams {
   position: absolute;
@@ -35,7 +35,7 @@
   list-style: none;
   padding: 0;
   margin: 0;
-  width: 16rem;
+  width: 350px;
   // height: 18rem;
   position: absolute;
   top: 0;
@@ -93,21 +93,21 @@
   }
   p:nth-child(1) {
     font-weight: 700;
-    font-size: 1.2rem;
+    font-size: max(1.8vw, 25px);
   }
   p:nth-child(2) {
     font-weight: 600;
-    font-size: 0.72rem;
+    font-size: max(1vw, 15px);
   }
   p:nth-child(3) {
     font-weight: 600;
-    font-size: 0.72rem;
+    font-size: max(1vw, 15px);
     opacity: 0.5;
   }
 }
 .memberDescription {
   width: 100%;
-  font-size: 0.6rem;
+  font-size: max(0.9vw, 12px);
   font-weight: 500;
   margin-top: 10px;
 }

@@ -25,23 +25,16 @@
 // .oneLiner {
 // }
 .oneLinerPartOne {
+  @include header;
   margin: 5px;
-  text-align: center;
-  font-size: 3rem;
-
-  @media (max-width: 700px) {
-    font-size: 2rem;
-  }
+  font-size: clamp(30px, 4vw, 50px);
   span:nth-child(1) {
     margin-left: 15px;
   }
 }
 .description {
-  font-size: 1rem;
-  text-align: center;
-  @media (max-width: 700px) {
-    font-size: 14px;
-  }
+  @include description;
+  font-size: clamp(14px, 2vw, 20px);
 }
 
 .cometCharacter {
@@ -55,8 +48,8 @@
   visibility: hidden;
 }
 .sheet {
-  height: 250px;
-  width: 250px;
+  height: max(40vh, 300px);
+  width: max(40vh, 300px);
   max-width: 80vw;
   position: absolute;
   background-color: #ffe9e9;
@@ -72,13 +65,17 @@
   padding: 20px;
   margin-bottom: 15px;
   h3 {
-    font-size: 1.5rem;
+    @include header;
+    font-size: clamp(20px, 2vw, 40px);
     text-align: center;
   }
   p {
-    font-size: 0.7rem;
+    @include description;
+    font-size: clamp(12px, 1vw, 18px);
+
+    // font-size: 0.7rem;
     margin-top: 1rem;
-    text-align: center;
+    // text-align: center;
   }
 }
 
