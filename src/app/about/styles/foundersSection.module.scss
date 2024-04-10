@@ -40,7 +40,7 @@
   margin: 10px;
 }
 .description {
-  font-size: 1rem;
+  @include description;
   text-align: left;
   margin: 20px 5px;
 }
@@ -49,8 +49,8 @@
   @include flex(column, flex-start, center);
   position: absolute;
   left: 5%;
-  top: 10%;
-  transform: translateY(-20%);
+  top: 0%;
+  // transform: translateY(-20%);
   max-width: 25%;
   font-weight: 800;
   margin-top: 10px;
@@ -68,15 +68,18 @@
     width: 100%;
     @include flex(row, flex-start, center);
     gap: 15px;
+    font-size: clamp(20px, 2vw, 35px);
+    font-weight: 600;
   }
-  font-size: 1rem;
+  font-size: clamp(14px, 1vw, 20px);
   font-weight: 400;
 }
 .linkedinIcon {
   width: 1.5rem;
 }
 .founderOneLiner {
-  font-size: 2.7em;
+  // font-size: 2.7em;
+  font-size: clamp(30px, 5vw, 70px);
 }
 
 @media (max-width: 700px) {
@@ -96,7 +99,6 @@
     text-align: left;
   }
   .founderOneLiner {
-    font-size: 1em;
     max-width: 20%;
   }
 }

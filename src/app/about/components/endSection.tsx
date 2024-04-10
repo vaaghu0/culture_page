@@ -16,8 +16,10 @@ export const EndSection: React.FC = () => {
       </div>
       <Image
         className={endSectionStyle.peopleImage}
-        src={people}
+        src={people.people_desk1}
         alt="people"
+        fetchPriority="auto"
+        placeholder={"blur"}
       />
     </section>
   );

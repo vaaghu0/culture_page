@@ -6,6 +6,6 @@ export { Linkedin } from "./linkedin";
 export { default as member3 } from "./members/member3.png";
 export { default as icon } from "./icon.svg";
 export { default as background } from "./background.svg";
-export { default as people } from "./people.svg";
 
 export * as illustrations from "./illustrations";
+export * as people from "./people";
