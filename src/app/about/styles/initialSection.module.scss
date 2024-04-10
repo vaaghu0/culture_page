@@ -2,7 +2,7 @@
 
 .initialSection {
   @extend .section;
-  padding: 10%;
+  padding: 15%;
 }
 
 .oneLiner,
@@ -11,7 +11,8 @@
   text-align: center;
 }
 .oneLiner {
-  font-size: 5rem;
+  font-size: 10vw;
+  line-height: 9vw;
   margin: 2px;
   margin-bottom: 1rem;
   font-weight: 800;
@@ -22,7 +23,7 @@
   // line-height: 3.5rem;
 }
 .description {
-  font-size: 2rem;
+  font-size: 2vw;
 
   @media (max-width: 700px) {
     font-size: 1.2rem;
