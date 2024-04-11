@@ -1,3 +1,5 @@
+"use client";
+
 import { useLayoutEffect, useRef, MutableRefObject } from "react";
 import Coin from "../assets/coin";
 import styles from "../styles.module.scss";

@@ -1,4 +1,3 @@
-"use client";
 import styles from "./styles.module.scss";
 
 import IllustrationSection from "./components/illustrationSection";
@@ -16,12 +15,12 @@ import EndSection from "./components/endSection";
 const Page = () => {
   return (
     <>
-      {/* <FirstSection /> */}
-      {/* <IllustrationSection /> */}
-      {/* <FoundersSection /> */}
+      <FirstSection />
+      <IllustrationSection />
+      <FoundersSection />
       <TeamsSection />
       <CoinSection />
-      {/* <EndSection /> */}
+      <EndSection />
     </>
   );
 };

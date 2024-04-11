@@ -7,6 +7,10 @@ $mobileView: 700px;
   align-items: $align;
 }
 
+@font-face {
+  font-family: montserrat;
+  src: url("../assets/fonts/Montserrat/Montserrat-VariableFont_wght.ttf");
+}
 .section {
   width: 100svw;
   height: 100svh;
@@ -18,11 +22,14 @@ $mobileView: 700px;
 
 @mixin header {
   font-size: clamp(30px, 4vw, 50px);
+  font-family: "montserrat";
   text-align: center;
   font-weight: 700;
+  line-height: 150%;
 }
 
 @mixin description {
   font-size: clamp(16px, 1vw, 20px);
+  font-family: "montserrat";
   text-align: center;
 }

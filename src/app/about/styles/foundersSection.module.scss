@@ -25,7 +25,7 @@
   min-width: 100vw;
   max-width: 100vw;
   max-height: 100svh;
-  @include flex(column, flex-start, center);
+  @include flex(row, center, flex-start);
   overflow: hidden;
 }
 
@@ -34,12 +34,13 @@
 }
 .foundersImage,
 .description {
-  width: min(85%, 85svw, 85svh);
-  // width: min(90%, 90svw, 90svh);
+  width: 100vh;
   height: auto;
   margin: 10px;
+  max-width: 75vw;
 }
 .description {
+  // display: none;
   @include description;
   text-align: left;
   margin: 20px 5px;
@@ -47,10 +48,10 @@
 
 .secondaryFounderCard {
   @include flex(column, flex-start, center);
-  position: absolute;
+  position: relative;
   left: 5%;
   top: 0%;
-  // transform: translateY(-20%);
+  transform: translateX(20%);
   max-width: 25%;
   font-weight: 800;
   margin-top: 10px;
@@ -73,16 +74,23 @@
   }
   font-size: clamp(14px, 1vw, 20px);
   font-weight: 400;
+  font-family: "montserrat";
 }
 .linkedinIcon {
   width: 1.5rem;
 }
 .founderOneLiner {
+  @include header;
+  font-weight: 900;
+  text-align: left;
   // font-size: 2.7em;
   font-size: clamp(30px, 5vw, 70px);
 }
 
 @media (max-width: 700px) {
+  .founderCard {
+    @include flex(column, flex-start, center);
+  }
   .foundersImage,
   .description {
     width: 95%;
@@ -99,6 +107,6 @@
     text-align: left;
   }
   .founderOneLiner {
-    max-width: 20%;
+    max-width: 40%;
   }
 }

@@ -1,3 +1,5 @@
+"use client";
+
 import { MutableRefObject, useLayoutEffect, useState, useEffect } from "react";
 
 import { teamsSectionStyle } from "../styles";
