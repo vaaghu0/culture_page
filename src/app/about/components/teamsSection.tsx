@@ -1,13 +1,16 @@
-import { MutableRefObject, Ref, useLayoutEffect, useState } from "react";
+import { MutableRefObject, useLayoutEffect, useState, useEffect } from "react";
 
 import { teamsSectionStyle } from "../styles";
 //gsap
+import { useRef } from "react";
+import { icon, members, background } from "../assets";
+import Image from "next/image";
+import { membersInfo } from "../utils";
+
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import Draggable from "gsap/dist/Draggable";
-import { useRef } from "react";
-import { icon, member3, background } from "../assets";
-import Image from "next/image";
+import { StaticImport } from "next/dist/shared/lib/get-img-props";
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(Draggable);
 /* 
@@ -15,11 +18,31 @@ gsap.registerPlugin(Draggable);
    * https://codepen.io/GreenSock/pen/RwKwLWK  
 */
 
-const Member: React.FC<{ name: string; title: string; hobbie?: string }> = ({
-  name,
-  title,
-  hobbie,
-}) => {
+type memberInfoDto = {
+  code: number;
+  name: string;
+  imgName: string;
+  title: string;
+  hobby: string;
+  description: string;
+};
+
+const Member: React.FC<{
+  name: string;
+  imgName: string;
+  title: string;
+  hobby?: string;
+  description: string;
+}> = ({ name, imgName, title, hobby, description }) => {
+  let [image, setImage] = useState<StaticImport | string>(members.Deekay);
+  let maxDescriptionLength = 500;
+  useEffect(() => {
+    try {
+      setImage(members[imgName]);
+    } catch (error) {
+      console.error("Error loading image:", error);
+    }
+  }, [imgName]);
   const [isActive, setIsActive] = useState(false);
   return (
     <li
@@ -37,7 +60,7 @@ const Member: React.FC<{ name: string; title: string; hobbie?: string }> = ({
       />
       <Image
         className={teamsSectionStyle.memberImage}
-        src={member3}
+        src={image}
         alt="member"
       />
       <div className={teamsSectionStyle.memberInfo}>
@@ -45,16 +68,14 @@ const Member: React.FC<{ name: string; title: string; hobbie?: string }> = ({
           <div className={teamsSectionStyle.memberDetails}>
             <p>{name}</p>
             <p>{title}</p>
-            <p>{hobbie}</p>
+            <p>{hobby}</p>
           </div>
           <Image className={teamsSectionStyle.memberIcon} src={icon} alt="" />
         </div>
         <p className={teamsSectionStyle.memberDescription}>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur
-          consectetur, voluptatibus hic obcaecati eius nihil quidem aperiam
-          quibusdam nemo. Eaque debitis quia iusto architecto quos nisi, ipsa
-          harum repellendus eum voluptas ut, non doloribus tempora nemo! Itaque
-          voluptatem id adipisci.
+          {description.length > maxDescriptionLength
+            ? description.slice(0, maxDescriptionLength) + "..."
+            : description}
         </p>
       </div>
     </li>
@@ -67,30 +88,27 @@ export const TeamsSection = () => {
   const nextButtonRef: MutableRefObject<any> = useRef();
   const drapProxyRef: MutableRefObject<any> = useRef();
 
-  const teamAnimation = () => {
-    const colors = ["#f38630", "#6fb936", "#ccc", "#6fb936"];
-    const boxes: Array<Element> = gsap.utils.toArray(".teamMember");
-    console.clear();
-    gsap.set(boxes, {
-      backgroundColor: gsap.utils.wrap(colors),
-    });
-    const t1 = gsap.timeline();
-
-    t1.set(boxes, {
-      x: "100vw",
-    }).to(boxes, {
-      xPercent: -100 * boxes.length,
-      duration: 5,
-      ease: "none",
-      repeat: -1,
-      onComplete: () => {
-        console.log("complete");
-      },
-    });
-    return t1;
-  };
-
   const slider: MutableRefObject<any> = useRef(null);
+  const [membersInfoArr, setMembersInfoArr] = useState<memberInfoDto[]>([]);
+  // membersInfo.info
+
+  useEffect(() => {
+    let tempArr = membersInfo.info.sort(() => {
+      return Math.random() - 0.5;
+    });
+
+    let result = [...tempArr];
+    let temp =
+      Math.round(
+        section.current.offsetWidth / (membersInfo.info.length * 300)
+      ) || 1;
+    for (let i = 0; i < temp; i++) {
+      result.push(...tempArr);
+    }
+    console.log(temp, result);
+    setMembersInfoArr(result);
+  }, []);
+
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
       let iteration = 0; // gets iterated when we scroll all the way to the end or start and wraps around - allows us to smoothly continue the playhead scrubbing in the correct direction.
@@ -267,7 +285,7 @@ export const TeamsSection = () => {
       });
     });
     return () => ctx.revert();
-  }, []);
+  }, [membersInfoArr]);
 
   return (
     <section ref={section} className={teamsSectionStyle.teamsSection}>
@@ -281,15 +299,18 @@ export const TeamsSection = () => {
       </div>
       <div className={`gallery ${teamsSectionStyle.gallery}`}>
         <ul className={`cards ${teamsSectionStyle.teams}`}>
-          <Member name="Deekay" title="none" hobbie="none" />
-          <Member name="Deekay" title="none" hobbie="none" />
-          <Member name="Deekay" title="none" hobbie="none" />
-          <Member name="Deekay" title="none" hobbie="none" />
-          <Member name="Deekay" title="none" hobbie="none" />
-          <Member name="Deekay" title="none" hobbie="none" />
-          <Member name="Deekay" title="none" hobbie="none" />
-          <Member name="Deekay" title="none" hobbie="none" />
-          <Member name="Deekay" title="none" hobbie="none" />
+          {membersInfoArr.map((info, index) => {
+            return (
+              <Member
+                key={index}
+                name={info.name}
+                imgName={info.imgName}
+                title={info.title}
+                hobby={info.hobby}
+                description={info.description}
+              />
+            );
+          })}
         </ul>
         <div className={teamsSectionStyle.actions}>
           <button className={teamsSectionStyle.button} ref={prevButtonRef}>

@@ -16,12 +16,12 @@ import EndSection from "./components/endSection";
 const Page = () => {
   return (
     <>
-      <FirstSection />
-      <IllustrationSection />
+      {/* <FirstSection /> */}
+      {/* <IllustrationSection /> */}
+      {/* <FoundersSection /> */}
       <TeamsSection />
       <CoinSection />
-      <FoundersSection />
-      <EndSection />
+      {/* <EndSection /> */}
     </>
   );
 };
