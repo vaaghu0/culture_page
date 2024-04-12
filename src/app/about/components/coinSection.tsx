@@ -155,47 +155,49 @@ export const CoinSection = () => {
   }, [section]);
   return (
     <section className={coinStyles.coinSection} ref={section}>
-      <div className={coinStyles.info}>
-        <div className={coinStyles.oneLiner}>
-          <p className={coinStyles.oneLinerPartOne}>
-            We believe in THE
-            <span className={coinStyles.cometCharacter}>C</span>
-            <span className={coinStyles.cometCharacter}>O</span>
-            <span className={coinStyles.cometCharacter}>M</span>
-            <span className={coinStyles.cometCharacter}>E</span>
-            <span className={coinStyles.cometCharacter}>T</span>
+      <div className={coinStyles.mainDiv}>
+        <div className={coinStyles.info}>
+          <div className={coinStyles.oneLiner}>
+            <p className={coinStyles.oneLinerPartOne}>
+              We believe in THE
+              <span className={coinStyles.cometCharacter}>C</span>
+              <span className={coinStyles.cometCharacter}>O</span>
+              <span className={coinStyles.cometCharacter}>M</span>
+              <span className={coinStyles.cometCharacter}>E</span>
+              <span className={coinStyles.cometCharacter}>T</span>
+            </p>
+          </div>
+          <p className={coinStyles.description}>
+            {`At Vittae, we abide by "THE COMET," our guiding work culture values`}
           </p>
         </div>
-        <p className={coinStyles.description}>
-          {`At Vittae, we abide by "THE COMET," our guiding work culture values`}
-        </p>
-      </div>
-      <div className={coinStyles.coinDiv}>
-        <div ref={coin}>
-          <Coin />
+        <div className={coinStyles.coinDiv}>
+          <div ref={coin}>
+            <Coin />
+          </div>
         </div>
-      </div>
-      <div className={coinStyles.sheetDiv}>
-        <Sheet
-          title="Transparency"
-          text="Be open and loud about what you feel. We believe honest communication is the true key to great collaboration and output."
-        />
-        <Sheet
-          title="Enterprising"
-          text="Curiosity mixed with the drive to impact and think out of the box is key to your personal growth. Take up challenges and bring out your thinking hats from time to time to showcase that you are willing to go the extra mile."
-        />
-        <Sheet
-          title="Micro-Productivity"
-          text="No task is too big, make sure that you are able to divide your tasks into smaller chunks and improve them with constant 360-degree feedback. This will also give you the opportunity to celebrate small wins."
-        />
-        <Sheet
-          title="Optimism"
-          text="Take on every day and every opportunity with a positive outlook. Believe in yourself and remember that you can do anything."
-        />
-        <Sheet
-          title="Championship"
-          text="Day zero should start with you being the champion for our customers, our brand & employees, and to your goals. You will be the facilitators of change and will lead the company across to future change"
-        />
+        <div className={coinStyles.sheetDiv}>
+          <Sheet
+            title="Transparency"
+            text="Be open and loud about what you feel. We believe honest communication is the true key to great collaboration and output."
+          />
+          <Sheet
+            title="Enterprising"
+            text="Curiosity mixed with the drive to impact and think out of the box is key to your personal growth. Take up challenges and bring out your thinking hats from time to time to showcase that you are willing to go the extra mile."
+          />
+          <Sheet
+            title="Micro-Productivity"
+            text="No task is too big, make sure that you are able to divide your tasks into smaller chunks and improve them with constant 360-degree feedback. This will also give you the opportunity to celebrate small wins."
+          />
+          <Sheet
+            title="Optimism"
+            text="Take on every day and every opportunity with a positive outlook. Believe in yourself and remember that you can do anything."
+          />
+          <Sheet
+            title="Championship"
+            text="Day zero should start with you being the champion for our customers, our brand & employees, and to your goals. You will be the facilitators of change and will lead the company across to future change"
+          />
+        </div>
       </div>
     </section>
   );

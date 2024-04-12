@@ -8,7 +8,10 @@
   @include flex(column, center, center);
   position: relative;
 }
-
+.mainDiv {
+  @extend .coinSection;
+  background: transparent;
+}
 .info {
   width: 85vw;
   height: 50vh;
