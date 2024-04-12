@@ -83,7 +83,7 @@
   font-size: clamp(25px, 5vw, 70px);
 }
 
-@media (max-width: 425px) {
+@media (max-width: $mobileView) {
   .founderCard {
     @include flex(column, flex-start, center);
   }

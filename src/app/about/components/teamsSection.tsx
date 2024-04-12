@@ -38,6 +38,13 @@ const Member: React.FC<{
 }> = ({ name, imgName, title, hobby, description }) => {
   let [image, setImage] = useState<StaticImport | string>(members.Deekay);
   let maxDescriptionLength = 500;
+
+  //resulting in a bug
+  const focusCard = (EventTarget: EventTarget) => {
+    console.log(EventTarget);
+    if (EventTarget) (EventTarget as HTMLElement).scrollIntoView();
+  };
+
   useEffect(() => {
     try {
       setImage(members[imgName]);
@@ -51,7 +58,10 @@ const Member: React.FC<{
       className={
         !isActive ? teamsSectionStyle.member : teamsSectionStyle.memberActive
       }
-      onMouseEnter={() => setIsActive(true)}
+      onMouseEnter={() => {
+        setIsActive(true);
+        // focusCard(event.currentTarget);
+      }}
       onMouseLeave={() => setIsActive(false)}
       // onClick={handleClick}
     >
