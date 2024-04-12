@@ -6,7 +6,7 @@
   background-color: #ffffff;
   color: black;
   @media (max-width: $mobileView) {
-    @include flex(column-reverse, space-evenly);
+    @include flex(column-reverse, flex-end, center);
   }
 }
 
@@ -76,5 +76,14 @@
     p {
       text-align: center;
     }
+  }
+}
+
+@media (max-width: $mobileView) {
+  .textBlock {
+    min-height: 50vh;
+  }
+  .textBlockContainer {
+    min-height: 50vh;
   }
 }

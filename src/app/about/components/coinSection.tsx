@@ -8,6 +8,8 @@ import coinStyles from "../styles/coinSection.module.scss";
 //gsap
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
+const Duration = 1000;
+
 gsap.registerPlugin(ScrollTrigger);
 
 const Sheet: React.FC<{ text: string; title: string }> = ({ title, text }) => {
@@ -22,15 +24,17 @@ const Sheet: React.FC<{ text: string; title: string }> = ({ title, text }) => {
 export const CoinSection = () => {
   const coin = useRef(null);
   const section: MutableRefObject<any> = useRef(null);
+
   const coinAnimation = () => {
     const duration = 100;
     return gsap
       .timeline({
         delay: 10,
         scrollTrigger: {
-          start: "top top",
+          start: () => "top top",
+          end: () => "+=" + Duration,
           trigger: section.current,
-          pin: true,
+          pin: section.current,
           scrub: true,
         },
       })
@@ -72,7 +76,9 @@ export const CoinSection = () => {
       .timeline({
         scrollTrigger: {
           trigger: section.current,
-          start: "top",
+          start: () => "top",
+          end: () => "+=" + Duration,
+
           scrub: true,
         },
       })
@@ -93,7 +99,9 @@ export const CoinSection = () => {
     let t1 = gsap.timeline({
       scrollTrigger: {
         trigger: section.current,
-        start: "top",
+        start: () => "top",
+        end: () => "+=" + Duration,
+
         // pin: section.current,
         scrub: true,
       },
@@ -106,7 +114,7 @@ export const CoinSection = () => {
           y: "0vh",
           duration: -1,
         }).to(element, {
-          y: "-100vh",
+          y: "-150vh",
           delay: 100,
           duration: duration,
         });
@@ -118,7 +126,9 @@ export const CoinSection = () => {
     let t1 = gsap.timeline({
       scrollTrigger: {
         trigger: section.current,
-        start: "top",
+        start: () => "top",
+        end: () => "+=" + Duration,
+
         scrub: true,
       },
     });
@@ -142,7 +152,7 @@ export const CoinSection = () => {
       return t1;
     });
     return () => ctx.revert();
-  }, []);
+  }, [section]);
   return (
     <section className={coinStyles.coinSection} ref={section}>
       <div className={coinStyles.info}>

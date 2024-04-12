@@ -22,7 +22,7 @@
 .teams {
   position: absolute;
   width: 100vw;
-  height: 16rem;
+  height: 25rem;
   // top: 40%;
   left: 50%;
   transform: translate(-50%, 0%);
@@ -35,7 +35,7 @@
   list-style: none;
   padding: 0;
   margin: 0;
-  width: 350px;
+  width: 400px;
   // height: 18rem;
   position: absolute;
   top: 0;
@@ -58,12 +58,14 @@
   }
 }
 .memberImage {
-  height: 16rem;
+  height: 20rem;
+  margin-top: 5rem;
   width: auto;
   z-index: 1;
 }
 .memberBackgroundImage {
-  height: 18rem;
+  height: 27rem;
+  width: auto;
   position: absolute;
   top: 0px;
   z-index: 0;

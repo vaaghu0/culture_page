@@ -1,12 +1,5 @@
 @import "./main.module.scss";
 
-@function randomNum($max) {
-  $rand: random($max);
-  $randomNum: floor($rand - ceil($max/2));
-
-  @return $randomNum;
-}
-
 .coinSection {
   @extend .section;
   width: 100vw;
@@ -48,42 +41,55 @@
   visibility: hidden;
 }
 .sheet {
-  height: max(40vh, 300px);
-  width: max(40vh, 300px);
+  height: max(60vh, 300px);
+  width: max(60vh, 300px);
   max-width: 80vw;
   position: absolute;
   background-color: #ffe9e9;
-  bottom: 0px;
+  bottom: -25%;
   left: 50%;
   font-size: 0.8em;
   text-align: center;
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  flex-direction: column;
-  border-radius: 10px;
-  padding: 20px;
+  padding: 0px 5%;
   margin-bottom: 15px;
+  @include flex(column, flex-start, center);
   h3 {
     @include header;
-    font-size: clamp(20px, 2vw, 40px);
+    margin: 10% 0px;
+    margin-top: 20%;
+    font-size: clamp(20px, 4vw, 40px);
     text-align: center;
   }
   p {
     @include description;
-    font-size: clamp(12px, 1vw, 18px);
-
-    // font-size: 0.7rem;
-    margin-top: 1rem;
-    // text-align: center;
+    font-size: clamp(12px, 2vw, 18px);
   }
+}
+@function randomNum($max) {
+  $rand: random($max);
+  $randomNum: floor($rand - ceil($max / 2));
+  @return $randomNum;
 }
 
 @for $i from 1 through 5 {
   .sheet:nth-child(#{$i}) {
-    @if $i%2 == 1 {
+    $temp: randomNum(5);
+    $reverse: -$temp;
+    @if $i % 2 == 1 {
       background-color: #d9e6ff;
     }
-    transform: translateX(-50%) rotateZ(randomNum(10) + deg);
+    transform: translateX(-50%) rotateZ(#{$temp}deg);
+    h3,
+    p {
+      transform: rotateZ($reverse * 1deg);
+    }
+  }
+}
+
+@media (max-width: 425px) {
+  .sheet {
+    height: 90vw;
+    width: 90vw;
+    bottom: -15%;
   }
 }

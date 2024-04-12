@@ -37,7 +37,7 @@
   width: 100vh;
   height: auto;
   margin: 10px;
-  max-width: 75vw;
+  max-width: 70vw;
 }
 .description {
   // display: none;
@@ -49,14 +49,10 @@
 .secondaryFounderCard {
   @include flex(column, flex-start, center);
   position: relative;
-  left: 5%;
-  top: 0%;
-  transform: translateX(20%);
-  max-width: 25%;
+  max-width: 25vw;
   font-weight: 800;
   margin-top: 10px;
   @media (max-width: 700) {
-    @include flex(row-reverse, space-between, center);
   }
   & > div {
     width: 100%;
@@ -84,16 +80,17 @@
   font-weight: 900;
   text-align: left;
   // font-size: 2.7em;
-  font-size: clamp(30px, 5vw, 70px);
+  font-size: clamp(25px, 5vw, 70px);
 }
 
-@media (max-width: 700px) {
+@media (max-width: 425px) {
   .founderCard {
     @include flex(column, flex-start, center);
   }
   .foundersImage,
   .description {
     width: 95%;
+    max-width: none;
   }
   .secondaryFounderCard {
     position: static;

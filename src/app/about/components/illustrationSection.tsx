@@ -14,6 +14,8 @@ import {
 } from "../assets/illustrations";
 import Image from "next/image";
 
+const Duration = 2000;
+
 gsap.registerPlugin(ScrollTrigger);
 
 export const IllustrationSection = () => {
@@ -34,6 +36,7 @@ export const IllustrationSection = () => {
           trigger: sectionRef.current,
           pin: true,
           start: "top top",
+          end: "+=" + Duration,
           scrub: true,
           snap: {
             snapTo: 1 / (panels.length - 1),
@@ -59,6 +62,7 @@ export const IllustrationSection = () => {
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top top",
+          end: "+=" + Duration,
           scrub: true,
           snap: {
             snapTo: 1 / (panels.length - 1),

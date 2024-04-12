@@ -7,7 +7,7 @@ import { teamsSectionStyle } from "../styles";
 import { useRef } from "react";
 import { icon, members, background } from "../assets";
 import Image from "next/image";
-import { membersInfo } from "../utils";
+import { constants, membersInfo } from "../utils";
 
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
@@ -102,7 +102,8 @@ export const TeamsSection = () => {
     let result = [...tempArr];
     let temp =
       Math.round(
-        section.current.offsetWidth / (membersInfo.info.length * 300)
+        section.current.offsetWidth /
+          (membersInfo.info.length * constants.MEMBER_CARD_WIDTH)
       ) || 1;
     for (let i = 0; i < temp; i++) {
       result.push(...tempArr);

@@ -8,13 +8,15 @@ import {
   useState,
 } from "react";
 import styles from "../styles.module.scss";
-import { founder1, founder2, founder3, founder4, Linkedin } from "../assets";
+import { founder1, Linkedin } from "../assets";
 import { foundersSectionStyle } from "../styles";
 //gsap
 import Image from "next/image";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { constants } from "../utils";
+
+const Duration = 1000;
 
 gsap.registerPlugin(ScrollTrigger);
 type Props = {
@@ -52,7 +54,7 @@ const FounderInfoBlock: React.FC<{ name: string }> = ({ name }) => {
 
 const FounderCard: React.FC<{ name: string; isMobile?: boolean }> = ({
   name,
-  isMobile = false,
+  isMobile = true,
 }) => {
   useEffect(() => {}, [isMobile]);
   if (isMobile) {
@@ -103,32 +105,29 @@ export const FoundersSection: React.FC = () => {
 
   const foundersListTimeline = () => {
     let panels = gsap.utils.toArray("." + foundersSectionStyle.founderCard);
-    return gsap
-      .timeline({})
-      .set(".circle", { width: "10px" }, 0)
-      .to(
-        panels,
-        {
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            pin: sectionRef.current,
-            start: "top",
-            snap: {
-              snapTo: 1 / (panels.length - 1),
-              duration: 1,
-              delay: 0,
-              ease: "expo",
-            },
-            scrub: true,
-            // markers: true,
+    return gsap.timeline({}).to(
+      panels,
+      {
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          pin: sectionRef.current,
+          start: () => "top top",
+          end: () => "+=" + Duration,
+          snap: {
+            snapTo: 1 / (panels.length - 1),
+            duration: 1,
+            delay: 0,
+            ease: "expo",
           },
-          xPercent: -100 * (panels.length - 1),
-          ease: "none",
-          delay: 50,
-          duration: 100,
+          scrub: true,
         },
-        ">"
-      );
+        xPercent: -100 * (panels.length - 1),
+        ease: "none",
+        delay: 50,
+        duration: 100,
+      },
+      ">"
+    );
   };
   const [isMobile, setIsMobile] = useState<boolean>(false);
   useEffect(() => {
@@ -146,7 +145,7 @@ export const FoundersSection: React.FC = () => {
       foundersListTimeline();
     }, sectionRef);
     return () => ctx.revert();
-  });
+  }, [sectionRef]);
 
   return (
     <section className={foundersSectionStyle.foundersSection} ref={sectionRef}>
@@ -156,13 +155,6 @@ export const FoundersSection: React.FC = () => {
         <FounderCard name="Rithwin" isMobile={isMobile} />
         <FounderCard name="Rithwin" isMobile={isMobile} />
       </div>
-      {/* <div className={styles.dotes}>
-        <div className={styles.circle + " circle"}></div>
-        <div className={styles.goastCircle + " goastCircle"}></div>
-        <div className={styles.goastCircle + " goastCircle"}></div>
-        <div className={styles.goastCircle + " goastCircle"}></div>
-        <div className={styles.goastCircle + " goastCircle"}></div>
-      </div> */}
     </section>
   );
 };
